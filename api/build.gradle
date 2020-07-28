@@ -1,5 +1,11 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
 plugins {
-	id 'idea'
+	id "org.springframework.boot"
 }
 
 dependencies {

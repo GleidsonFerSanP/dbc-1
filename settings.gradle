@@ -1,0 +1,6 @@
+rootProject.name = 'sicred'
+
+include 'core',
+        'api',
+        'messaging'
+

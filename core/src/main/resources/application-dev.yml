@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: sicred-api
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: sicred
+    password: sicred
+    url: jdbc:postgresql://localhost:5432/sicred
+    platform: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    openInView: false
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false

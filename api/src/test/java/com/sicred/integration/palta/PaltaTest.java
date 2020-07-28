@@ -1,6 +1,7 @@
 package com.sicred.integration.palta;
 
 import com.sicred.integration.IntegrationBaseTest;
+import com.sicred.api.request.v1.PaltaRequest;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -15,10 +16,13 @@ public class PaltaTest extends IntegrationBaseTest {
     @DisplayName("cria uma palta com sucesso")
     public void createPaltaSuccess(){
 
+        var request = PaltaRequest.builder()
+                .build();
+
         RestAssuredMockMvc.given()
                 .webAppContextSetup(webApplicationContext)
                 .when()
-                .post(BASE_URL)
+                .post(BASE_URL, request)
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value());

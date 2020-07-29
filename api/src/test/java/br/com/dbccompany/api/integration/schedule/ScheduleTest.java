@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 @DisplayName("testes de integração da pauta")
 public class ScheduleTest extends IntegrationBaseTest {
 
-    private static final String BASE_URL = "/pautas";
+    private static final String BASE_URL = "/schedules";
 
     @Test
     @DisplayName("falha ao realizar um POST sem body")

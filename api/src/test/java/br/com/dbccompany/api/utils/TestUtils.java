@@ -1,6 +1,7 @@
 package br.com.dbccompany.api.utils;
 
 import java.util.Random;
+import java.util.UUID;
 
 public abstract class TestUtils {
 
@@ -15,6 +16,10 @@ public abstract class TestUtils {
             buffer.append((char) randomLimitedInt);
         }
         return buffer.toString();
+    }
+
+    public static String randomUUID(){
+        return UUID.randomUUID().toString();
     }
 
 }

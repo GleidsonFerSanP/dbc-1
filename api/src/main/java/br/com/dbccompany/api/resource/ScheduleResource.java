@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static br.com.dbccompany.api.resource.mediatype.V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON;
@@ -57,6 +58,19 @@ public class ScheduleResource {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    @Operation(summary = "Create a Schedule")
+    @ApiResponses(value = { @ApiResponse(responseCode = "404", description = "not found", content = @Content)})
+    @GetMapping(value = "/{code}", produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
+    public ResponseEntity<ScheduleResponse> findByCode(@PathVariable final String code) {
+
+        var scheduleDto = scheduleFindService.findByCode(code);
+
+        var response = bindResponseWithHateoasLink(scheduleDto);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @Operation(summary = "find all Schedules")
     @GetMapping(produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
     public CollectionModel<ScheduleResponse> findAllSchedules() {
         var responses = scheduleFindService.findAll().stream()

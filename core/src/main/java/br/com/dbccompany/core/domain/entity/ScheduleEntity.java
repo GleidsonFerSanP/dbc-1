@@ -12,12 +12,12 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
 
-@Table(name="palta")
-@Entity(name = "Palta")
+@Table(name="schedule")
+@Entity(name = "Schedule")
 @EqualsAndHashCode(callSuper=false)
 @Data
 @NoArgsConstructor
-public class PaltaEntity extends RootEntity{
+public class ScheduleEntity extends RootEntity{
 
     @Column(nullable = false)
     @NonNull

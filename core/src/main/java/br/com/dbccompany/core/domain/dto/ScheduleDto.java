@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PaltaDto {
+public class ScheduleDto {
 
     private String code;
 

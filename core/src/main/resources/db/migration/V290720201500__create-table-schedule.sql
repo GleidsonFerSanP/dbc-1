@@ -1,4 +1,4 @@
-CREATE TABLE palta (
+CREATE TABLE schedule (
      CODE         UUID NOT NULL,
      TITLE        VARCHAR(255) NOT NULL,
      DESCRIPTION  TEXT,

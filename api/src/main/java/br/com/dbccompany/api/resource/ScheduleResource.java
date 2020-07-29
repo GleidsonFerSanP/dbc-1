@@ -1,10 +1,9 @@
 package br.com.dbccompany.api.resource;
 
-import br.com.dbccompany.api.mapper.PaltaAPIMapper;
-import br.com.dbccompany.api.resource.request.v1.PaltaRequest;
-import br.com.dbccompany.api.resource.response.v1.PaltaResponse;
-import br.com.dbccompany.core.domain.dto.PaltaDto;
-import br.com.dbccompany.core.service.PaltaCreateService;
+import br.com.dbccompany.api.mapper.ScheduleAPIMapper;
+import br.com.dbccompany.api.resource.request.v1.ScheduleRequest;
+import br.com.dbccompany.api.resource.response.v1.ScheduleResponse;
+import br.com.dbccompany.core.service.ScheduleCreateService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -26,31 +25,31 @@ import static br.com.dbccompany.api.resource.mediatype.V1MediaType.APPLICATION_V
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
-@RequestMapping("/paltas")
+@RequestMapping("/schedules")
 @RequiredArgsConstructor
 @Validated
-public class PaltaResource {
+public class ScheduleResource {
 
-    private final PaltaCreateService paltaCreateService;
-    private final PaltaAPIMapper paltaMapper;
+    private final ScheduleCreateService scheduleCreateService;
+    private final ScheduleAPIMapper scheduleAPIMapper;
 
-    @Operation(summary = "Create a palta")
+    @Operation(summary = "Create a Schedule")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "created a palta",
+            @ApiResponse(responseCode = "201", description = "created a Schedule",
                     content = { @Content(mediaType = APPLICATION_VND_SICRED_APP_V_1_JSON,
-                            schema = @Schema(implementation = PaltaResponse.class)) }),
+                            schema = @Schema(implementation = ScheduleResponse.class)) }),
             @ApiResponse(responseCode = "400", description = "Invalid payload",
                     content = @Content)})
     @PostMapping(produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
-    public ResponseEntity<PaltaResponse> create(@RequestBody @Valid final PaltaRequest request, final Errors errors) {
+    public ResponseEntity<ScheduleResponse> create(@RequestBody @Valid final ScheduleRequest request, final Errors errors) {
 
-        var paltaDto = paltaMapper.toDto(request);
+        var scheduleDto = scheduleAPIMapper.toDto(request);
 
-        var paltaDtoSaved = paltaCreateService.create(paltaDto);
+        var scheduleDtoSaved = scheduleCreateService.create(scheduleDto);
 
-        var response = paltaMapper.toResponse(paltaDtoSaved);
+        var response = scheduleAPIMapper.toResponse(scheduleDtoSaved);
 
-        var link = linkTo(PaltaResource.class).slash(response.getCode()).withSelfRel();
+        var link = linkTo(ScheduleResource.class).slash(response.getCode()).withSelfRel();
 
         response.add(link);
 

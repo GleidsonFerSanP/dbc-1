@@ -1,8 +1,8 @@
-package br.com.dbccompany.api.integration.palta;
+package br.com.dbccompany.api.integration.schedule;
 
 import br.com.dbccompany.api.integration.IntegrationBaseTest;
 import br.com.dbccompany.api.resource.mediatype.V1MediaType;
-import br.com.dbccompany.api.resource.request.v1.PaltaRequest;
+import br.com.dbccompany.api.resource.request.v1.ScheduleRequest;
 import br.com.dbccompany.api.utils.TestUtils;
 import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
@@ -10,14 +10,14 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
 
-@DisplayName("testes de integração da palta")
-public class PaltaTest extends IntegrationBaseTest {
+@DisplayName("testes de integração da pauta")
+public class ScheduleTest extends IntegrationBaseTest {
 
-    private static final String BASE_URL = "/paltas";
+    private static final String BASE_URL = "/pautas";
 
     @Test
     @DisplayName("falha ao realizar um POST sem body")
-    public void createPaltaValidateEmptyBodyFail(){
+    public void createScheduleValidateEmptyBodyFail(){
 
         RestAssuredMockMvc.given()
                 .webAppContextSetup(webApplicationContext)
@@ -32,9 +32,9 @@ public class PaltaTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("falha ao realizar um POST sem definir um media type")
-    public void createPaltaValidateMediaTypeBodyFail(){
+    public void createScheduleValidateMediaTypeBodyFail(){
 
-        var request = PaltaRequest.builder()
+        var request = ScheduleRequest.builder()
                 .build();
 
         RestAssuredMockMvc.given()
@@ -50,10 +50,10 @@ public class PaltaTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma palta sem titulo")
-    public void createPaltaValidateTitleFail(){
+    @DisplayName("falha ao criar uma pauta sem titulo")
+    public void createScheduleValidateTitleFail(){
 
-        var request = PaltaRequest.builder()
+        var request = ScheduleRequest.builder()
                 .build();
 
         RestAssuredMockMvc.given()
@@ -70,10 +70,10 @@ public class PaltaTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("cria uma palta com sucesso")
-    public void createPaltaSuccess(){
+    @DisplayName("cria uma pauta com sucesso")
+    public void createScheduleSuccess(){
 
-        var request = PaltaRequest.builder()
+        var request = ScheduleRequest.builder()
                 .title(TestUtils.randomText(10))
                 .build();
 

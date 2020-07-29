@@ -1,8 +1,8 @@
 package br.com.dbccompany.api.mapper;
 
-import br.com.dbccompany.api.resource.request.v1.PaltaRequest;
-import br.com.dbccompany.api.resource.response.v1.PaltaResponse;
-import br.com.dbccompany.core.domain.dto.PaltaDto;
+import br.com.dbccompany.api.resource.request.v1.ScheduleRequest;
+import br.com.dbccompany.api.resource.response.v1.ScheduleResponse;
+import br.com.dbccompany.core.domain.dto.ScheduleDto;
 import br.com.dbccompany.core.utils.DateUtils;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -16,14 +16,14 @@ import java.util.Objects;
 import static org.mapstruct.ReportingPolicy.IGNORE;
 
 @Mapper(unmappedTargetPolicy = IGNORE, componentModel = "spring")
-public interface PaltaAPIMapper {
+public interface ScheduleAPIMapper {
 
     Integer DEFAULT_EXPIRES_TIME = 1;
 
     @Mapping(target = "expiration", source = "expiresTime", qualifiedByName = "getExpiration")
-    PaltaDto toDto(final PaltaRequest request);
+    ScheduleDto toDto(final ScheduleRequest request);
 
-    PaltaResponse toResponse(final PaltaDto paltaDto);
+    ScheduleResponse toResponse(final ScheduleDto scheduleDto);
 
     @Named("getExpiration")
     default Date getExpiration(final Integer expiresTime){

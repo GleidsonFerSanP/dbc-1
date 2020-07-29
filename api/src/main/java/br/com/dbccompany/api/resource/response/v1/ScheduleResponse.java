@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=false)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class PaltaResponse extends RepresentationModel<PaltaResponse> {
+public class ScheduleResponse extends RepresentationModel<ScheduleResponse> {
     private String code;
     private String title;
     private String description;

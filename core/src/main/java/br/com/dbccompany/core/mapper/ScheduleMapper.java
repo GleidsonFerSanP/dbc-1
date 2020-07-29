@@ -2,9 +2,7 @@ package br.com.dbccompany.core.mapper;
 
 import br.com.dbccompany.core.domain.dto.ScheduleDto;
 import br.com.dbccompany.core.domain.entity.ScheduleEntity;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
+import org.mapstruct.*;
 
 import java.util.UUID;
 
@@ -14,6 +12,11 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 public interface ScheduleMapper {
 
     ScheduleEntity toEntity(final ScheduleDto scheduleDto);
+
+    @Mappings({
+            @Mapping(target = "expiration", ignore = true)
+    })
+    void updateEntity(final ScheduleDto scheduleDto, @MappingTarget final ScheduleEntity existsScheduleEntity);
 
     @Mapping(target = "code", source = "code", qualifiedByName = "getCode")
     ScheduleDto toDto(final ScheduleEntity scheduleEntity);

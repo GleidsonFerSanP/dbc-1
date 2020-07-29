@@ -18,8 +18,6 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 @Mapper(unmappedTargetPolicy = IGNORE, componentModel = "spring")
 public interface ScheduleAPIMapper {
 
-    Integer DEFAULT_EXPIRES_TIME = 1;
-
     @Mapping(target = "expiration", source = "expiresTime", qualifiedByName = "getExpiration")
     ScheduleDto toDto(final ScheduleRequest request);
 
@@ -28,7 +26,6 @@ public interface ScheduleAPIMapper {
     @Named("getExpiration")
     default Date getExpiration(final Integer expiresTime){
         return Objects.nonNull(expiresTime) && expiresTime.intValue() > 0 ?
-                DateUtils.toDate(LocalDateTime.now().plus(expiresTime, ChronoUnit.MINUTES)) :
-                DateUtils.toDate(LocalDateTime.now().plus(DEFAULT_EXPIRES_TIME, ChronoUnit.MINUTES));
+                DateUtils.toDate(LocalDateTime.now().plus(expiresTime, ChronoUnit.MINUTES)) : null;
     }
 }

@@ -6,6 +6,7 @@ import br.com.dbccompany.api.resource.response.v1.ScheduleResponse;
 import br.com.dbccompany.core.domain.dto.ScheduleDto;
 import br.com.dbccompany.core.service.ScheduleCreateService;
 import br.com.dbccompany.core.service.ScheduleFindService;
+import br.com.dbccompany.core.service.ScheduleUpdateService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -36,6 +37,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 public class ScheduleResource {
 
     private final ScheduleCreateService scheduleCreateService;
+    private final ScheduleUpdateService scheduleUpdateService;
     private final ScheduleFindService scheduleFindService;
     private final ScheduleAPIMapper scheduleAPIMapper;
 
@@ -56,6 +58,25 @@ public class ScheduleResource {
         var response = bindResponseWithHateoasLink(scheduleDtoSaved);
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @Operation(summary = "Update a Schedule")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "success update a Schedule",
+                    content = { @Content(mediaType = APPLICATION_VND_SICRED_APP_V_1_JSON,
+                            schema = @Schema(implementation = ScheduleResponse.class)) }),
+            @ApiResponse(responseCode = "404", description = "schedule not found", content = @Content)})
+    @PutMapping(value = "/{code}", produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
+    public ResponseEntity<ScheduleResponse> update(@PathVariable final String code,
+                                                   @RequestBody @Valid final ScheduleRequest request, final Errors errors) {
+
+        var scheduleDto = scheduleAPIMapper.toDto(request);
+
+        var scheduleDtoSaved = scheduleUpdateService.update(code, scheduleDto);
+
+        var response = bindResponseWithHateoasLink(scheduleDtoSaved);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @Operation(summary = "Create a Schedule")

@@ -178,6 +178,103 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .body("title", equalTo("title"))
                 .body("expiration", equalTo("2020-07-29T19:29:50.684+00:00"))
         ;
+    }
 
+    @Test
+    @DisplayName("tenta atualizar uma pauta sem um body e falha")
+    public void updateScheduleWithoutBodyCauseBadRequest(){
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(ContentType.JSON)
+                .when()
+                .put(BASE_URL.concat("/8de44aec-d624-44d7-b14b-d342fc0bf14a"))
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+        ;
+    }
+
+    @Test
+    @DisplayName("tenta atualizar uma pauta sem um título e falha")
+    public void updateScheduleWithoutTitleCauseBadRequest(){
+
+        var request = ScheduleRequest.builder()
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .body(request)
+                .contentType(ContentType.JSON)
+                .when()
+                .put(BASE_URL.concat("/8de44aec-d624-44d7-b14b-d342fc0bf14a"))
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body("errors[0].message", equalTo("this field cannot be empty  [title]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("tenta atualizar uma pauta com um code que não existe e falha")
+    @Sql("/sql/delete-all-schedules.sql")
+    @Sql("/sql/schedule-insert.sql")
+    public void updateScheduleCauseNotFound(){
+
+        var request = ScheduleRequest.builder()
+                .title(TestUtils.randomText(10))
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .body(request)
+                .contentType(ContentType.JSON)
+                .when()
+                .put(BASE_URL.concat("/8de44aec-d624-44d7-b14b-d342fc0bf14a"))
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .body(notNullValue())
+                .body("message", equalTo("schedule not found by code"))
+                .body("httpStatus", equalTo(HttpStatus.NOT_FOUND.value()))
+                .body("error", equalTo("NotFoundException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("atualiza o título de uma pauta com sucesso")
+    @Sql("/sql/delete-all-schedules.sql")
+    @Sql("/sql/schedule-insert.sql")
+    public void updateTitleScheduleSuccess(){
+
+        var randomTitle = TestUtils.randomText(10);
+
+        var request = ScheduleRequest.builder()
+                .title(randomTitle)
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .body(request)
+                .contentType(ContentType.JSON)
+                .when()
+                .put(BASE_URL.concat("/8de44aec-d624-44d7-b14b-d342fc0bf14e"))
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value())
+                .body(notNullValue())
+                .body("code", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf14e"))
+                .body("title", equalTo(randomTitle))
+                .body("expiration", equalTo("2020-07-29T19:29:50.684+00:00"))
+        ;
     }
 }

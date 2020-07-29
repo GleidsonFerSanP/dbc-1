@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 
 import static org.mapstruct.ReportingPolicy.IGNORE;
 
-@Mapper(unmappedTargetPolicy = IGNORE)
+@Mapper(componentModel = "spring", unmappedTargetPolicy = IGNORE)
 public interface PaltaMapper {
 
     PaltaEntity toEntity(final PaltaDto paltaDto);

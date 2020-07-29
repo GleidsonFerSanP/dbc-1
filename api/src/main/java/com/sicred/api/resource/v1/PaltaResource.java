@@ -1,6 +1,6 @@
 package com.sicred.api.resource.v1;
 
-import com.sicred.api.mapper.PaltaMapper;
+import com.sicred.api.mapper.PaltaAPIMapper;
 import com.sicred.api.request.v1.PaltaRequest;
 import com.sicred.api.response.v1.PaltaResponse;
 import com.sicred.core.service.PaltaService;
@@ -24,7 +24,7 @@ public class PaltaResource {
     public static final String APPLICATION_VND_SICRED_APP_V_1_JSON = "application/vnd.sicred.app-v1+json";
 
     private final PaltaService paltaService;
-    private final PaltaMapper paltaMapper;
+    private final PaltaAPIMapper paltaMapper;
 
     @Operation(summary = "Create a palta")
     @ApiResponses(value = {

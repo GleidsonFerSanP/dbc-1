@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class PaltaService {
 
     private final PaltaRepository paltaRepository;
+
     private final PaltaMapper paltaMapper;
 
     public PaltaDto create(final PaltaDto paltaDto){

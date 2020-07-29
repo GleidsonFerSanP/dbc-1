@@ -6,16 +6,13 @@ import br.com.dbccompany.api.resource.request.v1.ScheduleRequest;
 import br.com.dbccompany.api.utils.TestUtils;
 import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.jdbc.Sql;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.isEmptyOrNullString;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.notNullValue;
 
 @DisplayName("testes de integração da pauta")
 public class ScheduleTest extends IntegrationBaseTest {
@@ -99,6 +96,7 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("busca todas as pautas com sucesso")
+    @Sql("/sql/delete-all-schedules.sql")
     @Sql("/sql/schedules-inserts.sql")
     public void getAllScheduleSuccess(){
 
@@ -162,6 +160,7 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("busca uma pauta com sucesso")
+    @Sql("/sql/delete-all-schedules.sql")
     @Sql("/sql/schedule-insert.sql")
     public void findByCodeScheduleSuccess(){
 

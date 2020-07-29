@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Table(name="palta")
 @Entity(name = "Palta")
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper=false)
 public class PaltaEntity extends RootEntity{
 
     private String title;

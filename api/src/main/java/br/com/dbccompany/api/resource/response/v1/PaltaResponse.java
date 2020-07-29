@@ -1,4 +1,4 @@
-package br.com.dbccompany.api.response.v1;
+package br.com.dbccompany.api.resource.response.v1;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

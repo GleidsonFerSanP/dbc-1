@@ -1,8 +1,8 @@
-package br.com.dbccompany.api.resource.v1;
+package br.com.dbccompany.api.resource;
 
 import br.com.dbccompany.api.mapper.PaltaAPIMapper;
-import br.com.dbccompany.api.request.v1.PaltaRequest;
-import br.com.dbccompany.api.response.v1.PaltaResponse;
+import br.com.dbccompany.api.resource.request.v1.PaltaRequest;
+import br.com.dbccompany.api.resource.response.v1.PaltaResponse;
 import br.com.dbccompany.core.service.PaltaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -12,19 +12,23 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
+import static br.com.dbccompany.api.resource.mediatype.V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
 @RequestMapping("/paltas")
 @RequiredArgsConstructor
+@Validated
 public class PaltaResource {
-
-    public static final String APPLICATION_VND_SICRED_APP_V_1_JSON = "application/vnd.sicred.app-v1+json";
 
     private final PaltaService paltaService;
     private final PaltaAPIMapper paltaMapper;
@@ -37,7 +41,7 @@ public class PaltaResource {
             @ApiResponse(responseCode = "400", description = "Invalid payload",
                     content = @Content)})
     @PostMapping(produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
-    public ResponseEntity<PaltaResponse> create(@RequestBody final PaltaRequest request) {
+    public ResponseEntity<PaltaResponse> create(@RequestBody @Valid final PaltaRequest request, final Errors errors) {
 
         var paltaDto = paltaMapper.toDto(request);
 

@@ -1,7 +1,7 @@
 package br.com.dbccompany.api.integration.palta;
 
 import br.com.dbccompany.api.integration.IntegrationBaseTest;
-import br.com.dbccompany.api.request.v1.PaltaRequest;
+import br.com.dbccompany.api.resource.request.v1.PaltaRequest;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;

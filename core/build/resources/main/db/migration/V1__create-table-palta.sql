@@ -1,0 +1,7 @@
+CREATE TABLE palta
+  (
+     CODE         UUID NOT NULL,
+     TITLE         VARCHAR(255) NOT NULL,
+     DESCRIPTION  TEXT,
+     PRIMARY KEY (CODE)
+  );

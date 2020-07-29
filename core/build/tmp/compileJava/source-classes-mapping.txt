@@ -1,0 +1,14 @@
+br/com/dbccompany/core/CoreConfig.java
+ br.com.dbccompany.core.CoreConfig
+br/com/dbccompany/core/domain/entity/PaltaEntity.java
+ br.com.dbccompany.core.domain.entity.PaltaEntity
+br/com/dbccompany/core/service/PaltaService.java
+ br.com.dbccompany.core.service.PaltaService
+br/com/dbccompany/core/domain/dto/PaltaDto.java
+ br.com.dbccompany.core.domain.dto.PaltaDto
+br/com/dbccompany/core/mapper/PaltaMapper.java
+ br.com.dbccompany.core.mapper.PaltaMapper
+br/com/dbccompany/core/repository/PaltaRepository.java
+ br.com.dbccompany.core.repository.PaltaRepository
+br/com/dbccompany/core/domain/entity/RootEntity.java
+ br.com.dbccompany.core.domain.entity.RootEntity

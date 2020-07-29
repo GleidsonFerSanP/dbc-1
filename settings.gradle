@@ -1,4 +1,4 @@
+rootProject.name = 'dbc-1'
+
 include 'core'
 include 'api'
-include 'messaging'
-

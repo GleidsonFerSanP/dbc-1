@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.575s</div>
+<div class="counter">0.923s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="percent">75%</div>
 <p>successful</p>
 </div>
 </td>
@@ -112,7 +112,7 @@ Expected status code &lt;201&gt; but was &lt;400&gt;.
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:133)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:119)
-	at br.com.dbccompany.api.integration.palta.PaltaTest.createPaltaSuccess(PaltaTest.java:28)
+	at br.com.dbccompany.api.integration.palta.PaltaTest.createPaltaSuccess(PaltaTest.java:89)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -204,21 +204,36 @@ Expected status code &lt;201&gt; but was &lt;400&gt;.
 </thead>
 <tr>
 <td class="failures">createPaltaSuccess</td>
-<td class="failures">0.575s</td>
+<td class="failures">0.803s</td>
 <td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">createPaltaValidateEmptyBodyFail</td>
+<td class="success">0.039s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createPaltaValidateMediaTypeBodyFail</td>
+<td class="success">0.025s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createPaltaValidateTitleFail</td>
+<td class="success">0.056s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>23:10:03.197 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [br.com.dbccompany.api.integration.palta.PaltaTest]
-23:10:03.198 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [br.com.dbccompany.api.integration.palta.PaltaTest]
-23:10:03.198 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [br.com.dbccompany.api.integration.palta.PaltaTest]
-23:10:03.199 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [br.com.dbccompany.api.integration.palta.PaltaTest]
-23:10:03.203 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5ab3b390 testClass = PaltaTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1ff2fd08 testClass = PaltaTest, locations = '{}', classes = '{class br.com.dbccompany.api.ApiApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@619b2a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6ad55ac7, [ImportsContextCustomizer@16aaf639 key = [org.springframework.cloud.contract.wiremock.WireMockConfiguration, org.springframework.cloud.contract.wiremock.WireMockRestTemplateConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5c70be9e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7da4f646, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1563d0a7, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null].
-23:10:03.223 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Activating profiles [test]
-23:10:03.227 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+<pre>13:48:26.047 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [br.com.dbccompany.api.integration.palta.PaltaTest]
+13:48:26.047 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [br.com.dbccompany.api.integration.palta.PaltaTest]
+13:48:26.048 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [br.com.dbccompany.api.integration.palta.PaltaTest]
+13:48:26.048 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [br.com.dbccompany.api.integration.palta.PaltaTest]
+13:48:26.053 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@7537150 testClass = PaltaTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@50e1df36 testClass = PaltaTest, locations = '{}', classes = '{class br.com.dbccompany.api.ApiApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@619b2a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5f023537, [ImportsContextCustomizer@c04ad93 key = [org.springframework.cloud.contract.wiremock.WireMockConfiguration, org.springframework.cloud.contract.wiremock.WireMockRestTemplateConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@b7cffe3, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@77719bc1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5d1bc309, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null].
+13:48:26.071 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Activating profiles [test]
+13:48:26.075 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -228,54 +243,87 @@ Expected status code &lt;201&gt; but was &lt;400&gt;.
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.3.2.RELEASE)
 
-?[30m2020-07-28 23:10:03,767?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.StartupInfoLogger?[0;39m: Starting PaltaTest on gleidson-accer with PID 16872 (started by gleidson in /home/gleidson/IdeaProjects/dbc-1/api)
-?[30m2020-07-28 23:10:03,769?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.SpringApplication?[0;39m: The following profiles are active: test
-?[30m2020-07-28 23:10:05,189?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Multiple Spring Data modules found, entering strict repository configuration mode!
-?[30m2020-07-28 23:10:05,191?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-?[30m2020-07-28 23:10:05,234?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationExtensionSupport?[0;39m: Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.PaltaRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-?[30m2020-07-28 23:10:05,238?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Finished Spring Data repository scanning in 40ms. Found 0 JDBC repository interfaces.
-?[30m2020-07-28 23:10:05,261?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Multiple Spring Data modules found, entering strict repository configuration mode!
-?[30m2020-07-28 23:10:05,265?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-?[30m2020-07-28 23:10:05,320?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Finished Spring Data repository scanning in 49ms. Found 1 JPA repository interfaces.
-?[30m2020-07-28 23:10:06,291?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.web.embedded.tomcat.TomcatWebServer?[0;39m: Tomcat initialized with port(s): 0 (http)
-?[30m2020-07-28 23:10:06,303?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing ProtocolHandler [&quot;http-nio-auto-1&quot;]
-?[30m2020-07-28 23:10:06,304?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Starting service [Tomcat]
-?[30m2020-07-28 23:10:06,305?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Starting Servlet engine: [Apache Tomcat/9.0.37]
-?[30m2020-07-28 23:10:06,433?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing Spring embedded WebApplicationContext
-?[30m2020-07-28 23:10:06,434?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.web.servlet.context.ServletWebServerApplicationContext?[0;39m: Root WebApplicationContext: initialization completed in 2438 ms
-?[30m2020-07-28 23:10:06,910?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Flyway Community Edition 6.4.4 by Redgate
-?[30m2020-07-28 23:10:06,916?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mcom.zaxxer.hikari.HikariDataSource?[0;39m: HikariPool-1 - Starting...
-?[30m2020-07-28 23:10:07,099?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mcom.zaxxer.hikari.HikariDataSource?[0;39m: HikariPool-1 - Start completed.
-?[30m2020-07-28 23:10:07,117?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Database: jdbc:h2:mem:testdb (H2 1.4)
-?[30m2020-07-28 23:10:07,176?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Successfully validated 0 migrations (execution time 00:00.017s)
-?[30m2020-07-28 23:10:07,176?[0;39m ?[31mWARN ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: No migrations found. Are your locations set up correctly?
-?[30m2020-07-28 23:10:07,196?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
-?[30m2020-07-28 23:10:07,265?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
-?[30m2020-07-28 23:10:07,271?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Schema &quot;PUBLIC&quot; is up to date. No migration necessary.
-?[30m2020-07-28 23:10:07,452?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.scheduling.concurrent.ExecutorConfigurationSupport?[0;39m: Initializing ExecutorService 'applicationTaskExecutor'
-?[30m2020-07-28 23:10:07,537?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.jpa.internal.util.LogHelper?[0;39m: HHH000204: Processing PersistenceUnitInfo [name: default]
-?[30m2020-07-28 23:10:07,611?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.Version?[0;39m: HHH000412: Hibernate ORM core version 5.4.18.Final
-?[30m2020-07-28 23:10:07,785?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.annotations.common.reflection.java.JavaReflectionManager?[0;39m: HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-?[30m2020-07-28 23:10:07,907?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.dialect.Dialect?[0;39m: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-Hibernate: create table palta (code uuid not null, description varchar(255), title varchar(255), primary key (code))
-?[30m2020-07-28 23:10:08,513?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator?[0;39m: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[30m2020-07-28 23:10:08,521?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.springframework.orm.jpa.AbstractEntityManagerFactoryBean?[0;39m: Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[30m2020-07-28 23:10:09,173?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.util.log.Log?[0;39m: Logging initialized @7222ms
-?[30m2020-07-28 23:10:11,681?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.actuate.endpoint.web.EndpointLinksResolver?[0;39m: Exposing 2 endpoint(s) beneath base path '/actuator'
-?[30m2020-07-28 23:10:11,847?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.Server?[0;39m: jetty-9.2.z-SNAPSHOT
-?[30m2020-07-28 23:10:11,861?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.handler.ContextHandler?[0;39m: Started w.o.e.j.s.ServletContextHandler@69d9a022{/__admin,null,AVAILABLE}
-?[30m2020-07-28 23:10:11,862?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.handler.ContextHandler?[0;39m: Started w.o.e.j.s.ServletContextHandler@271a8a58{/,null,AVAILABLE}
-?[30m2020-07-28 23:10:11,869?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.AbstractConnector?[0;39m: Started NetworkTrafficServerConnector@41153e26{HTTP/1.1}{0.0.0.0:10416}
-?[30m2020-07-28 23:10:11,870?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.Server?[0;39m: Started @9920ms
-?[30m2020-07-28 23:10:11,871?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Starting ProtocolHandler [&quot;http-nio-auto-1&quot;]
-?[30m2020-07-28 23:10:11,910?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.web.embedded.tomcat.TomcatWebServer?[0;39m: Tomcat started on port(s): 44425 (http) with context path ''
-?[30m2020-07-28 23:10:11,913?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.DeferredRepositoryInitializationListener?[0;39m: Triggering deferred initialization of Spring Data repositories…
-?[30m2020-07-28 23:10:11,970?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.DeferredRepositoryInitializationListener?[0;39m: Spring Data repositories initialized!
-?[30m2020-07-28 23:10:12,000?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.StartupInfoLogger?[0;39m: Started PaltaTest in 8.769 seconds (JVM running for 10.049)
-?[30m2020-07-28 23:10:12,182?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing Spring TestDispatcherServlet ''
-?[30m2020-07-28 23:10:12,183?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Initializing Servlet ''
-?[30m2020-07-28 23:10:12,200?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Completed initialization in 17 ms
-?[30m2020-07-28 23:10:12,407?[0;39m ?[31mWARN ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.handler.AbstractHandlerExceptionResolver?[0;39m: Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity&lt;br.com.dbccompany.api.response.v1.PaltaResponse&gt; br.com.dbccompany.api.resource.v1.PaltaResource.create(br.com.dbccompany.api.request.v1.PaltaRequest)]
+?[30m2020-07-29 13:48:26,855?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.StartupInfoLogger?[0;39m: Starting PaltaTest on gleidson-accer with PID 15411 (started by gleidson in /home/gleidson/workspace/dbc-1/api)
+?[30m2020-07-29 13:48:26,858?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.SpringApplication?[0;39m: The following profiles are active: test
+?[30m2020-07-29 13:48:28,531?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Multiple Spring Data modules found, entering strict repository configuration mode!
+?[30m2020-07-29 13:48:28,533?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+?[30m2020-07-29 13:48:28,572?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationExtensionSupport?[0;39m: Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.PaltaRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+?[30m2020-07-29 13:48:28,579?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Finished Spring Data repository scanning in 39ms. Found 0 JDBC repository interfaces.
+?[30m2020-07-29 13:48:28,593?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Multiple Spring Data modules found, entering strict repository configuration mode!
+?[30m2020-07-29 13:48:28,595?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+?[30m2020-07-29 13:48:28,631?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate?[0;39m: Finished Spring Data repository scanning in 32ms. Found 1 JPA repository interfaces.
+?[30m2020-07-29 13:48:30,065?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.web.embedded.tomcat.TomcatWebServer?[0;39m: Tomcat initialized with port(s): 0 (http)
+?[30m2020-07-29 13:48:30,083?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing ProtocolHandler [&quot;http-nio-auto-1&quot;]
+?[30m2020-07-29 13:48:30,085?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Starting service [Tomcat]
+?[30m2020-07-29 13:48:30,086?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Starting Servlet engine: [Apache Tomcat/9.0.37]
+?[30m2020-07-29 13:48:30,249?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing Spring embedded WebApplicationContext
+?[30m2020-07-29 13:48:30,250?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.web.servlet.context.ServletWebServerApplicationContext?[0;39m: Root WebApplicationContext: initialization completed in 3015 ms
+?[30m2020-07-29 13:48:30,791?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Flyway Community Edition 6.4.4 by Redgate
+?[30m2020-07-29 13:48:30,798?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mcom.zaxxer.hikari.HikariDataSource?[0;39m: HikariPool-1 - Starting...
+?[30m2020-07-29 13:48:31,005?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mcom.zaxxer.hikari.HikariDataSource?[0;39m: HikariPool-1 - Start completed.
+?[30m2020-07-29 13:48:31,038?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Database: jdbc:h2:mem:testdb (H2 1.4)
+?[30m2020-07-29 13:48:31,122?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Successfully validated 1 migration (execution time 00:00.027s)
+?[30m2020-07-29 13:48:31,141?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Creating Schema History table &quot;PUBLIC&quot;.&quot;flyway_schema_history&quot; ...
+?[30m2020-07-29 13:48:31,203?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Current version of schema &quot;PUBLIC&quot;: &lt;&lt; Empty Schema &gt;&gt;
+?[30m2020-07-29 13:48:31,210?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Migrating schema &quot;PUBLIC&quot; to version 1 - create-table-palta
+?[30m2020-07-29 13:48:31,250?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.flywaydb.core.internal.logging.slf4j.Slf4jLog?[0;39m: Successfully applied 1 migration to schema &quot;PUBLIC&quot; (execution time 00:00.059s)
+?[30m2020-07-29 13:48:31,380?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.scheduling.concurrent.ExecutorConfigurationSupport?[0;39m: Initializing ExecutorService 'applicationTaskExecutor'
+?[30m2020-07-29 13:48:31,447?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.jpa.internal.util.LogHelper?[0;39m: HHH000204: Processing PersistenceUnitInfo [name: default]
+?[30m2020-07-29 13:48:31,546?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.Version?[0;39m: HHH000412: Hibernate ORM core version 5.4.18.Final
+?[30m2020-07-29 13:48:32,035?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.annotations.common.reflection.java.JavaReflectionManager?[0;39m: HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+?[30m2020-07-29 13:48:32,244?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.dialect.Dialect?[0;39m: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+?[30m2020-07-29 13:48:34,152?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator?[0;39m: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[30m2020-07-29 13:48:34,184?[0;39m ?[34mINFO ?[0;39m [?[34mtask-1?[0;39m] ?[33morg.springframework.orm.jpa.AbstractEntityManagerFactoryBean?[0;39m: Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[30m2020-07-29 13:48:35,257?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.util.log.Log?[0;39m: Logging initialized @10509ms
+?[30m2020-07-29 13:48:40,221?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.actuate.endpoint.web.EndpointLinksResolver?[0;39m: Exposing 2 endpoint(s) beneath base path '/actuator'
+?[30m2020-07-29 13:48:40,464?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.Server?[0;39m: jetty-9.2.z-SNAPSHOT
+?[30m2020-07-29 13:48:40,520?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.handler.ContextHandler?[0;39m: Started w.o.e.j.s.ServletContextHandler@3fa27ec0{/__admin,null,AVAILABLE}
+?[30m2020-07-29 13:48:40,525?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.handler.ContextHandler?[0;39m: Started w.o.e.j.s.ServletContextHandler@67302ed5{/,null,AVAILABLE}
+?[30m2020-07-29 13:48:40,549?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.AbstractConnector?[0;39m: Started NetworkTrafficServerConnector@32e2c6a1{HTTP/1.1}{0.0.0.0:10575}
+?[30m2020-07-29 13:48:40,553?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mwiremock.org.eclipse.jetty.server.Server?[0;39m: Started @15804ms
+?[30m2020-07-29 13:48:40,560?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Starting ProtocolHandler [&quot;http-nio-auto-1&quot;]
+?[30m2020-07-29 13:48:40,605?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.web.embedded.tomcat.TomcatWebServer?[0;39m: Tomcat started on port(s): 37965 (http) with context path ''
+?[30m2020-07-29 13:48:40,610?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.DeferredRepositoryInitializationListener?[0;39m: Triggering deferred initialization of Spring Data repositories…
+?[30m2020-07-29 13:48:40,696?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.data.repository.config.DeferredRepositoryInitializationListener?[0;39m: Spring Data repositories initialized!
+?[30m2020-07-29 13:48:40,726?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.boot.StartupInfoLogger?[0;39m: Started PaltaTest in 14.647 seconds (JVM running for 15.977)
+?[30m2020-07-29 13:48:41,146?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing Spring TestDispatcherServlet ''
+?[30m2020-07-29 13:48:41,147?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Initializing Servlet ''
+?[30m2020-07-29 13:48:41,160?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Completed initialization in 13 ms
+?[30m2020-07-29 13:48:41,293?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mbr.com.dbccompany.api.app.RestResponseEntityExceptionHandler?[0;39m: I=validation error, message=create.request.title: this field cannot be empty 
+{
+    &quot;errors&quot;: [
+        {
+            &quot;message&quot;: &quot;this field cannot be empty  [title]&quot;,
+            &quot;httpStatus&quot;: 400,
+            &quot;error&quot;: &quot;ConstraintViolationException&quot;,
+            &quot;path&quot;: &quot;/paltas&quot;,
+            &quot;timestamp&quot;: &quot;2020-07-29T13:48:41.304807&quot;
+        }
+    ]
+}
+?[30m2020-07-29 13:48:41,612?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing Spring TestDispatcherServlet ''
+?[30m2020-07-29 13:48:41,612?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Initializing Servlet ''
+?[30m2020-07-29 13:48:41,615?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Completed initialization in 3 ms
+?[30m2020-07-29 13:48:41,645?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33mbr.com.dbccompany.api.app.RestResponseEntityExceptionHandler?[0;39m: I=validation error, message=create.request.title: this field cannot be empty 
+{
+    &quot;errors&quot;: [
+        {
+            &quot;message&quot;: &quot;this field cannot be empty  [title]&quot;,
+            &quot;httpStatus&quot;: 400,
+            &quot;error&quot;: &quot;ConstraintViolationException&quot;,
+            &quot;path&quot;: &quot;/paltas&quot;,
+            &quot;timestamp&quot;: &quot;2020-07-29T13:48:41.646894&quot;
+        }
+    ]
+}
+?[30m2020-07-29 13:48:41,663?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing Spring TestDispatcherServlet ''
+?[30m2020-07-29 13:48:41,664?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Initializing Servlet ''
+?[30m2020-07-29 13:48:41,668?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Completed initialization in 2 ms
+
+?[30m2020-07-29 13:48:41,706?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.apache.juli.logging.DirectJDKLog?[0;39m: Initializing Spring TestDispatcherServlet ''
+?[30m2020-07-29 13:48:41,707?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Initializing Servlet ''
+?[30m2020-07-29 13:48:41,709?[0;39m ?[34mINFO ?[0;39m [?[34mTest worker?[0;39m] ?[33morg.springframework.web.servlet.FrameworkServlet?[0;39m: Completed initialization in 2 ms
+
 </pre>
 </span>
 </div>
@@ -287,7 +335,7 @@ Hibernate: create table palta (code uuid not null, description varchar(255), tit
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.5.1</a> at 28 de jul de 2020 23:10:12</p>
+<a href="http://www.gradle.org">Gradle 6.5.1</a> at 29 de jul de 2020 13:48:42</p>
 </div>
 </div>
 </body>

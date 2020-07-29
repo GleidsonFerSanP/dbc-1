@@ -1,6 +1,8 @@
 package br.com.dbccompany.api.resource.request.v1;
 
 import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.springframework.hateoas.RepresentationModel;
 
@@ -9,6 +11,8 @@ import javax.validation.constraints.Size;
 
 @ToString
 @Builder
+@Data
+@EqualsAndHashCode(callSuper=false)
 public class PaltaRequest extends RepresentationModel<PaltaRequest> {
 
     @NotBlank(message = "this field cannot be empty ")

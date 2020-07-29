@@ -1,6 +1,8 @@
+br/com/dbccompany/api/utils/TestUtils.java
+ br.com.dbccompany.api.utils.TestUtils
+br/com/dbccompany/api/ApiApplicationTests.java
+ br.com.dbccompany.api.ApiApplicationTests
 br/com/dbccompany/api/integration/IntegrationBaseTest.java
  br.com.dbccompany.api.integration.IntegrationBaseTest
 br/com/dbccompany/api/integration/palta/PaltaTest.java
  br.com.dbccompany.api.integration.palta.PaltaTest
-br/com/dbccompany/api/ApiApplicationTests.java
- br.com.dbccompany.api.ApiApplicationTests

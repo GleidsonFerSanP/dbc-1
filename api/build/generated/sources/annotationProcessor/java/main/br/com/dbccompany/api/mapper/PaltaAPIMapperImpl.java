@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-07-29T13:19:30-0300",
+    date = "2020-07-29T14:19:56-0300",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.7 (Ubuntu)"
 )
 @Component
@@ -22,6 +22,9 @@ public class PaltaAPIMapperImpl implements PaltaAPIMapper {
 
         PaltaDto paltaDto = new PaltaDto();
 
+        paltaDto.setTitle( request.getTitle() );
+        paltaDto.setDescription( request.getDescription() );
+
         return paltaDto;
     }
 
@@ -34,6 +37,7 @@ public class PaltaAPIMapperImpl implements PaltaAPIMapper {
         PaltaResponse paltaResponse = new PaltaResponse();
 
         paltaResponse.setCode( paltaDto.getCode() );
+        paltaResponse.setTitle( paltaDto.getTitle() );
         paltaResponse.setDescription( paltaDto.getDescription() );
 
         return paltaResponse;

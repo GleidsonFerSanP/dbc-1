@@ -9,6 +9,7 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 
 @Mapper(unmappedTargetPolicy = IGNORE, componentModel = "spring")
 public interface PaltaAPIMapper {
+
     PaltaDto toDto(final PaltaRequest request);
 
     PaltaResponse toResponse(final PaltaDto paltaDto);

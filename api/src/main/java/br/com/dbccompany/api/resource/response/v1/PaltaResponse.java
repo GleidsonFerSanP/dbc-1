@@ -7,6 +7,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.hateoas.RepresentationModel;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,4 +18,5 @@ public class PaltaResponse extends RepresentationModel<PaltaResponse> {
     private String code;
     private String title;
     private String description;
+    private Date expiration;
 }

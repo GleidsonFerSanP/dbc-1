@@ -3,7 +3,8 @@ package br.com.dbccompany.api.resource;
 import br.com.dbccompany.api.mapper.PaltaAPIMapper;
 import br.com.dbccompany.api.resource.request.v1.PaltaRequest;
 import br.com.dbccompany.api.resource.response.v1.PaltaResponse;
-import br.com.dbccompany.core.service.PaltaService;
+import br.com.dbccompany.core.domain.dto.PaltaDto;
+import br.com.dbccompany.core.service.PaltaCreateService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -30,7 +31,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 @Validated
 public class PaltaResource {
 
-    private final PaltaService paltaService;
+    private final PaltaCreateService paltaCreateService;
     private final PaltaAPIMapper paltaMapper;
 
     @Operation(summary = "Create a palta")
@@ -45,7 +46,9 @@ public class PaltaResource {
 
         var paltaDto = paltaMapper.toDto(request);
 
-        var response = paltaMapper.toResponse(paltaService.create(paltaDto));
+        var paltaDtoSaved = paltaCreateService.create(paltaDto);
+
+        var response = paltaMapper.toResponse(paltaDtoSaved);
 
         var link = linkTo(PaltaResource.class).slash(response.getCode()).withSelfRel();
 

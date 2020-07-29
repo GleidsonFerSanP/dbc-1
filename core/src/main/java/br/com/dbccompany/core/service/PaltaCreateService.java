@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class PaltaService {
+public class PaltaCreateService {
 
     private final PaltaRepository paltaRepository;
 

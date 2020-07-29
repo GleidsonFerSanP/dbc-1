@@ -4,7 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.hateoas.RepresentationModel;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -13,10 +12,11 @@ import javax.validation.constraints.Size;
 @Builder
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class PaltaRequest extends RepresentationModel<PaltaRequest> {
+public class PaltaRequest {
 
     @NotBlank(message = "this field cannot be empty ")
     @Size(min = 1, max = 255, message = "this field size min is 1 character and max 255 characters")
     private String title;
     private String description;
+    private Integer expiresTime;
 }

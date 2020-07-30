@@ -17,7 +17,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper=false)
 @Data
 @NoArgsConstructor
-public class ScheduleEntity extends RootEntity{
+public class ScheduleEntity extends RootEntity {
 
     @Column(nullable = false)
     @NonNull

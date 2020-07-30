@@ -13,15 +13,14 @@ spring:
     url: jdbc:postgresql://localhost:15432/sicred
     platform: postgres
   flyway:
-    enabled: false
-  #    baseline-on-migrate: true
-#    enabled: true
-#    locations: classpath:db/migration
+    baseline-on-migrate: true
+    enabled: true
+    locations: classpath:db/migration
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     generate-ddl: false
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     show-sql: true
     openInView: false
     properties:

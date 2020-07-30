@@ -2,17 +2,15 @@ package br.com.dbccompany.api.integration.vote;
 
 import br.com.dbccompany.api.integration.IntegrationBaseTest;
 import br.com.dbccompany.api.resource.mediatype.V1MediaType;
-import br.com.dbccompany.api.resource.request.v1.ExpiresTimeRequest;
+import br.com.dbccompany.api.resource.request.v1.VoteRequest;
 import br.com.dbccompany.api.utils.TestUtils;
-import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.context.jdbc.Sql;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 
 @DisplayName("testes de integração da votação")
 public class VoteTest extends IntegrationBaseTest {
@@ -33,45 +31,162 @@ public class VoteTest extends IntegrationBaseTest {
                 .statusCode(HttpStatus.BAD_REQUEST.value());
 
     }
-//
-//    @Test
-//    @DisplayName("falha ao realizar um POST sem definir um media type")
-//    public void createVotesValidateMediaTypeBodyFail(){
-//
-//        var request = VotesRequest.builder()
-//                .build();
-//
-//        RestAssuredMockMvc.given()
-//                .webAppContextSetup(webApplicationContext)
-//                .body(request)
-//                .when()
-//                .post(BASE_URL)
-//                .then()
-//                .log().body().and()
-//                .assertThat()
-//                .statusCode(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value());
-//
-//    }
-//
-//    @Test
-//    @DisplayName("falha ao criar uma pauta sem titulo")
-//    public void createVotesValidateTitleFail(){
-//
-//        var request = VotesRequest.builder()
-//                .build();
-//
-//        RestAssuredMockMvc.given()
-//                .webAppContextSetup(webApplicationContext)
-//                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
-//                .body(request)
-//                .when()
-//                .post(BASE_URL)
-//                .then()
-//                .log().body().and()
-//                .assertThat()
-//                .statusCode(HttpStatus.BAD_REQUEST.value());
-//
-//    }
+
+    @Test
+    @DisplayName("falha ao realizar um POST sem definir um media type")
+    public void createVotesValidateMediaTypeBodyFail(){
+
+        var request = VoteRequest.builder()
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value());
+
+    }
+
+    @Test
+    @DisplayName("falha ao criar um voto sem scheduleCode")
+    public void createVotesValidateScheduleCodeFail() {
+
+        var request = VoteRequest.builder()
+                .option("Sim")
+                .cpf("00253361001")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body("errors[0].message", equalTo("this field cannot be empty [scheduleCode]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar uma voto sem a opção votada")
+    public void createVotesValidateOptionFail() {
+
+        var request = VoteRequest.builder()
+                .cpf("00253361001")
+                .scheduleCode(TestUtils.randomUUID())
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body("errors[0].message", equalTo("option is required [Sim, Nao] [option]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar uma voto sem um CPF")
+    public void createVotesValidateWithoutCpfFail() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode(TestUtils.randomUUID())
+                .option("Nao")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body("errors[0].message", equalTo("cpf is required [cpf]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar uma voto sem um CPF válido")
+    public void createVotesValidateCpfFail() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode(TestUtils.randomUUID())
+                .cpf("12365478912")
+                .option("Nao")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body("errors[0].message", equalTo("invalid Brazilian individual taxpayer registry number (CPF) [cpf]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar uma voto sem um ScheduleCode válido")
+    public void createVotesInvalidScheduleCodeFail() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode(TestUtils.randomText(5))
+                .cpf("00253361001")
+                .option("Nao")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body("errors[0].message", equalTo("Invalid UUID code [scheduleCode]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
 //
 //    @Test
 //    @DisplayName("cria uma pauta com sucesso")

@@ -10,4 +10,6 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 public interface VoteMapper {
 
     VoteEntity toEntity(final VoteDto voteDto);
+
+    VoteDto toDto(final VoteEntity voteEntity);
 }

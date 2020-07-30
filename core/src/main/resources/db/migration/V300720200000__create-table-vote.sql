@@ -1,5 +1,6 @@
 CREATE TABLE vote (
      CODE             UUID NOT NULL,
+     CPF              VARCHAR(11) NOT NULL,
      OPTION           VARCHAR(3) NOT NULL,
      DAT_CREATION     TIMESTAMP NOT NULL,
      CODE_SCHEDULE    UUID NOT NULL,

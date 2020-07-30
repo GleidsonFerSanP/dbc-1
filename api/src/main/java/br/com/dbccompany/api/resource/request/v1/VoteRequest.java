@@ -1,5 +1,7 @@
 package br.com.dbccompany.api.resource.request.v1;
 
+import br.com.dbccompany.api.validator.UUID;
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.br.CPF;
 
@@ -7,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
+@Builder
 public class VoteRequest {
 
     @NotBlank(message = "cpf is required")
@@ -14,10 +17,11 @@ public class VoteRequest {
     @CPF
     private String cpf;
 
-    @NotBlank(message = "scheduleCode is required")
+    @NotBlank(message = "this field cannot be empty")
+    @UUID
     private String scheduleCode;
 
-    @NotBlank(message = "option is required [Sim, Não]")
-    @Size(max = 3, min = 3, message = "this field size required 3 characters [Sim, Não]")
+    @NotBlank(message = "option is required [Sim, Nao]")
+    @Size(max = 3, min = 3, message = "this field size required 3 characters [Sim, Nao]")
     private String option;
 }

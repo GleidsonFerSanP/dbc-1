@@ -17,12 +17,15 @@ import java.util.Date;
 public class VoteEntity extends RootEntity {
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "CODE_SCHEDULE", nullable = false)
     private ScheduleEntity schedule;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private VoteOption option;
+
+    @Column(nullable = false)
+    private String cpf;
 
     @CreationTimestamp
     @Column(name = "DAT_CREATION", nullable = false)

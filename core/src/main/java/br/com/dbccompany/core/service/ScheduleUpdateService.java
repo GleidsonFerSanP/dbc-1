@@ -52,7 +52,8 @@ public class ScheduleUpdateService {
 
         scheduleRepository.save(existsScheduleEntity);
 
-        scheduleFinishNotifyEnqueue.send(existsScheduleEntity.getCode().toString(), expiresTimeMinutes);
+        scheduleFinishNotifyEnqueue.send(existsScheduleEntity.getCode().toString(),
+                Objects.nonNull(expiresTimeMinutes) ? expiresTimeMinutes : DEFAULT_EXPIRES_TIME);
 
         var savedScheduleDto = scheduleMapper.toDto(existsScheduleEntity);
         log.info("I=saved with success, schedule={}", savedScheduleDto);

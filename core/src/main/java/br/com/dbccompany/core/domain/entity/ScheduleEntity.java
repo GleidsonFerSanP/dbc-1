@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.UUID;
 
 @Table(name="schedule")
 @Entity(name = "Schedule")
@@ -42,4 +43,7 @@ public class ScheduleEntity extends RootEntity {
     @Setter
     private Date expiration;
 
+    public ScheduleEntity(final UUID scheduleCode) {
+        super(scheduleCode);
+    }
 }

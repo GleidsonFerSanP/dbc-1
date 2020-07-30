@@ -15,7 +15,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 @DisplayName("testes unitários das validações customizadas")
-public class CustomValidatorTest {
+public class UUIDValidatorTest {
 
     @Test
     @DisplayName("testa se é um UUID válido")

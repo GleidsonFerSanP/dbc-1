@@ -1,6 +1,7 @@
 package br.com.dbccompany.api.resource.request.v1;
 
 import br.com.dbccompany.api.validator.UUID;
+import br.com.dbccompany.api.validator.VoteOption;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.br.CPF;
@@ -23,5 +24,6 @@ public class VoteRequest {
 
     @NotBlank(message = "option is required [Sim, Nao]")
     @Size(max = 3, min = 3, message = "this field size required 3 characters [Sim, Nao]")
+    @VoteOption(message = "options valids are [Sim, Nao]")
     private String option;
 }

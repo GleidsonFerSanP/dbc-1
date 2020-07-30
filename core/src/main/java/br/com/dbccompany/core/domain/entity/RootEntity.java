@@ -1,6 +1,7 @@
 package br.com.dbccompany.core.domain.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.Type;
 
@@ -19,5 +20,9 @@ public class RootEntity {
 
     public RootEntity() {
         this.code = UUID.randomUUID();
+    }
+
+    public RootEntity(final UUID code) {
+        this.code = code;
     }
 }

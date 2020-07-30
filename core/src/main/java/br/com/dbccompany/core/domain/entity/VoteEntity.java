@@ -1,9 +1,6 @@
 package br.com.dbccompany.core.domain.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -13,7 +10,7 @@ import java.util.Date;
 @Entity(name = "Vote")
 @EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor
-@ToString
+@Data
 public class VoteEntity extends RootEntity {
 
     @ManyToOne
@@ -29,6 +26,6 @@ public class VoteEntity extends RootEntity {
 
     @CreationTimestamp
     @Column(name = "DAT_CREATION", nullable = false)
-    @Getter
+    @Setter(AccessLevel.PRIVATE)
     private Date datCreation;
 }

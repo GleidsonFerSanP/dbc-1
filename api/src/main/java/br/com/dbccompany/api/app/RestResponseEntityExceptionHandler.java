@@ -2,9 +2,7 @@ package br.com.dbccompany.api.app;
 
 import br.com.dbccompany.api.resource.response.v1.ExceptionResponse;
 import br.com.dbccompany.api.resource.response.v1.ExceptionResponseList;
-import br.com.dbccompany.core.excepiton.InvalidCodeException;
-import br.com.dbccompany.core.excepiton.InvalidExpirationTimeException;
-import br.com.dbccompany.core.excepiton.NotFoundException;
+import br.com.dbccompany.core.excepiton.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,8 +18,7 @@ import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.NOT_FOUND;
+import static org.springframework.http.HttpStatus.*;
 
 @ControllerAdvice
 @RestController
@@ -47,11 +44,27 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         return  buildResponseError(e, httpStatus, request);
     }
 
-    @ExceptionHandler({InvalidCodeException.class, InvalidExpirationTimeException.class})
+    @ExceptionHandler({InvalidCodeException.class, InvalidExpirationTimeException.class, OptionVoteInvalidException.class})
     @ResponseStatus(BAD_REQUEST)
     public ExceptionResponse handleBadRequest(final RuntimeException e, final WebRequest request) {
         final HttpStatus httpStatus = BAD_REQUEST;
         logException("handleBadRequest", httpStatus, e);
+        return  buildResponseError(e, httpStatus, request);
+    }
+
+    @ExceptionHandler({VoteAlreadyExistsException.class})
+    @ResponseStatus(CONFLICT)
+    public ExceptionResponse handleConflict(final RuntimeException e, final WebRequest request) {
+        final HttpStatus httpStatus = CONFLICT;
+        logException("handleConflict", httpStatus, e);
+        return  buildResponseError(e, httpStatus, request);
+    }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(INTERNAL_SERVER_ERROR)
+    public ExceptionResponse handleInternalError(final Exception e, final WebRequest request) {
+        final HttpStatus httpStatus = INTERNAL_SERVER_ERROR;
+        logException("handleInternalError", httpStatus, e);
         return  buildResponseError(e, httpStatus, request);
     }
 

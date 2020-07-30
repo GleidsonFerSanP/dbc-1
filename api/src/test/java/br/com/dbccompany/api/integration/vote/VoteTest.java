@@ -8,9 +8,10 @@ import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
+import org.springframework.test.context.jdbc.Sql;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.containsString;
 
 @DisplayName("testes de integração da votação")
 public class VoteTest extends IntegrationBaseTest {
@@ -72,7 +73,8 @@ public class VoteTest extends IntegrationBaseTest {
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .body(notNullValue())
                 .body("errors", notNullValue())
-                .body("errors[0].message", equalTo("this field cannot be empty [scheduleCode]"))
+                .body(containsString("Invalid UUID code [scheduleCode]"))
+                .body(containsString("this field cannot be empty [scheduleCode]"))
                 .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
                 .body("errors[0].error", equalTo("ConstraintViolationException"))
         ;
@@ -99,7 +101,8 @@ public class VoteTest extends IntegrationBaseTest {
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .body(notNullValue())
                 .body("errors", notNullValue())
-                .body("errors[0].message", equalTo("option is required [Sim, Nao] [option]"))
+                .body(containsString("options valids are [Sim, Nao] [option]"))
+                .body(containsString("option is required [Sim, Nao] [option]"))
                 .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
                 .body("errors[0].error", equalTo("ConstraintViolationException"))
         ;
@@ -161,7 +164,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto sem um ScheduleCode válido")
+    @DisplayName("falha ao criar um voto sem um scheduleCode válido")
     public void createVotesInvalidScheduleCodeFail() {
 
         var request = VoteRequest.builder()
@@ -185,6 +188,64 @@ public class VoteTest extends IntegrationBaseTest {
                 .body("errors[0].message", equalTo("Invalid UUID code [scheduleCode]"))
                 .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
                 .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar um voto com uma opção de voto inválido")
+    public void createVoteInvalidOptionFail() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode(TestUtils.randomUUID())
+                .cpf("00253361001")
+                .option("AAA")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body("errors[0].message", equalTo("options valids are [Sim, Nao] [option]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar um voto para uma pauta da qual já votou")
+    @Sql("/sql/delete-all-schedules.sql")
+    @Sql("/sql/delete-all-votes.sql")
+    @Sql("/sql/vote-insert-to-cpf-00253361001.sql")
+    public void ifThereAreAlreadyVotesOfThisCfpForThisSchedulePreviouslyFails() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode("8de44aec-d624-44d7-b14b-d342fc0bf14e")
+                .cpf("00253361001")
+                .option("Nao")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.CONFLICT.value())
+                .body(notNullValue())
+                .body("message", equalTo("this vote already exists"))
+                .body("httpStatus", equalTo(HttpStatus.CONFLICT.value()))
+                .body("error", equalTo("VoteAlreadyExistsException"))
         ;
     }
 //

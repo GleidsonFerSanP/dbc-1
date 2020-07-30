@@ -1,6 +1,7 @@
 package br.com.dbccompany.core.domain.entity;
 
 import lombok.Getter;
+import lombok.ToString;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ import java.util.UUID;
 
 @MappedSuperclass
 @Getter
+@ToString
 public class RootEntity {
 
     @Id

@@ -18,5 +18,6 @@ public class ScheduleRequest {
     @Size(min = 1, max = 255, message = "this field size min is 1 character and max 255 characters")
     private String title;
     private String description;
+
     private Integer expiresTime;
 }

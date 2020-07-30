@@ -42,7 +42,6 @@ public class ScheduleEntity extends RootEntity {
     @Getter
     private Date datUpdate;
 
-    @Column(nullable = false)
     @Getter
     @Setter
     private Date expiration;

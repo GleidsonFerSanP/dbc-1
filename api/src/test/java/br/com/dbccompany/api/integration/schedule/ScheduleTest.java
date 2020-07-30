@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.SqlConfig;
+import org.springframework.test.context.jdbc.SqlGroup;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -182,7 +184,7 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("tenta atualizar uma pauta sem um body e falha")
-    public void updateScheduleWithoutBodyCauseBadRequest(){
+    public void updatefindByCodeScheduleSuccessScheduleWithoutBodyCauseBadRequest(){
 
         RestAssuredMockMvc.given()
                 .webAppContextSetup(webApplicationContext)

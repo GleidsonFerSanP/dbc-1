@@ -3,6 +3,7 @@ package br.com.dbccompany.core.service;
 import br.com.dbccompany.core.domain.dto.ScheduleDto;
 import br.com.dbccompany.core.excepiton.InvalidExpirationTimeException;
 import br.com.dbccompany.core.mapper.ScheduleMapper;
+import br.com.dbccompany.core.messaging.ScheduleFinishNotifyEnqueue;
 import br.com.dbccompany.core.repository.ScheduleRepository;
 import br.com.dbccompany.core.utils.DateUtils;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,8 @@ public class ScheduleUpdateService {
 
     private final ScheduleMapper scheduleMapper;
 
+    private final ScheduleFinishNotifyEnqueue scheduleFinishNotifyEnqueue;
+
     public ScheduleDto update(final String code, final ScheduleDto scheduleDto) {
         log.info("I=updating, schedule={}", scheduleDto);
 
@@ -48,6 +51,8 @@ public class ScheduleUpdateService {
         existsScheduleEntity.setExpiration(buildExpiration(expiresTimeMinutes));
 
         scheduleRepository.save(existsScheduleEntity);
+
+        scheduleFinishNotifyEnqueue.send(existsScheduleEntity.getCode().toString(), expiresTimeMinutes);
 
         var savedScheduleDto = scheduleMapper.toDto(existsScheduleEntity);
         log.info("I=saved with success, schedule={}", savedScheduleDto);

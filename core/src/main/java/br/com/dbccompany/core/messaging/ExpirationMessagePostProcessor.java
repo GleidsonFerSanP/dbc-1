@@ -1,4 +1,4 @@
-package br.com.dbccompany.core.service;
+package br.com.dbccompany.core.messaging;
 
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.Message;

@@ -1,4 +1,4 @@
-package br.com.dbccompany.api.app;
+package br.com.dbccompany.core.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
@@ -9,10 +9,12 @@ public class RabbitConfig {
 
     private static final String EXCHANGE_NAME = "schedule-exchange";
 
-    public static final String CREATED_SCHEDULE_QUEUE = "created-schedule-queue";
+    private static final String CREATED_SCHEDULE_QUEUE = "created-schedule-queue";
 
     private static final String CREATED_SCHECULE_ROUTING_KEY = "createdScheduleRoutingKey";
-    
+
+    private static final String FINISHED_SCHECULE_ROUTING_KEY = "finishedScheduleRoutingKey";
+
     private static final String FINISHED_SCHEDULE_QUEUE = "finished-schedule-queue";
 
     @Bean
@@ -32,13 +34,13 @@ public class RabbitConfig {
     Queue createdScheduleQueue() {
         return QueueBuilder.durable(CREATED_SCHEDULE_QUEUE)
                 .deadLetterExchange(EXCHANGE_NAME)
-                .deadLetterRoutingKey(CREATED_SCHECULE_ROUTING_KEY)
+                .deadLetterRoutingKey(FINISHED_SCHECULE_ROUTING_KEY)
                 .build();
     }
 
     @Bean
     Binding finishedScheduleBinding(Queue finishedScheduleQueue, DirectExchange exchange) {
-        return BindingBuilder.bind(finishedScheduleQueue).to(exchange).with(CREATED_SCHECULE_ROUTING_KEY);
+        return BindingBuilder.bind(finishedScheduleQueue).to(exchange).with(FINISHED_SCHECULE_ROUTING_KEY);
     }
 
     @Bean

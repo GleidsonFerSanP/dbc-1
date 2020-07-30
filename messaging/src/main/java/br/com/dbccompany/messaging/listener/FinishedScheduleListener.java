@@ -12,6 +12,6 @@ public class FinishedScheduleListener {
 
     @RabbitListener(queues = FINISHED_SCHEDULE_QUEUE)
     public void consume(final String code) {
-        log.info("M=consume, event, code={}", code);
+        log.info("I=consuming event, TAG=CONSUMING_FINISHED_SCHEDULE_QUEUE code={}", code);
     }
 }

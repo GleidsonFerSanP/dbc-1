@@ -13,10 +13,6 @@ public abstract class DateUtils {
                 .toLocalDateTime();
     }
 
-    public static Long getDifferenceMilliseconds(final Date date, final Date dateToCompare) {
-        return date.getTime() - dateToCompare.getTime();
-    }
-
     public static Date toDate(final LocalDateTime dateToConvert) {
         return java.sql.Timestamp.valueOf(dateToConvert);
     }

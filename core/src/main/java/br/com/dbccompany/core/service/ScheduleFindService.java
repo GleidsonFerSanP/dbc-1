@@ -1,6 +1,7 @@
 package br.com.dbccompany.core.service;
 
 import br.com.dbccompany.core.domain.dto.ScheduleDto;
+import br.com.dbccompany.core.domain.entity.ScheduleEntity;
 import br.com.dbccompany.core.excepiton.InvalidCodeException;
 import br.com.dbccompany.core.excepiton.NotFoundException;
 import br.com.dbccompany.core.mapper.ScheduleMapper;
@@ -40,6 +41,15 @@ public class ScheduleFindService {
                 .orElseThrow(() -> new NotFoundException("schedule not found by code")));
         log.info("I=schedule has be found, schedule={}", scheduleDto);
         return scheduleDto;
+    }
+
+    ScheduleEntity findEntityByCode(@NonNull final String code) {
+        validate(code);
+        log.info("I=init find schedule, code={}", code);
+        var scheduleEntity = scheduleRepository.findByCode(UUID.fromString(code))
+                .orElseThrow(() -> new NotFoundException("schedule not found by code"));
+        log.info("I=schedule has be found, schedule={}", scheduleEntity);
+        return scheduleEntity;
     }
 
     private void validate(final String code) {

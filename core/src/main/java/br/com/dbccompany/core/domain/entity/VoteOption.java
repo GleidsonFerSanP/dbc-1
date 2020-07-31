@@ -1,11 +1,13 @@
 package br.com.dbccompany.core.domain.entity;
 
-import br.com.dbccompany.core.excepiton.OptionVoteInvalidException;
+import br.com.dbccompany.core.exception.OptionVoteInvalidException;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.stream.Stream;
 
 @AllArgsConstructor
+@Getter
 public enum VoteOption {
 
     YES("Sim"),

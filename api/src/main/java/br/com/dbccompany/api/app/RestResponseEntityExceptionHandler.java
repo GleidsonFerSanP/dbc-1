@@ -2,7 +2,7 @@ package br.com.dbccompany.api.app;
 
 import br.com.dbccompany.api.resource.response.v1.ExceptionResponse;
 import br.com.dbccompany.api.resource.response.v1.ExceptionResponseList;
-import br.com.dbccompany.core.excepiton.*;
+import br.com.dbccompany.core.exception.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -44,7 +44,13 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         return  buildResponseError(e, httpStatus, request);
     }
 
-    @ExceptionHandler({InvalidCodeException.class, InvalidExpirationTimeException.class, OptionVoteInvalidException.class})
+    @ExceptionHandler({
+            InvalidCodeException.class,
+            InvalidExpirationTimeException.class,
+            OptionVoteInvalidException.class,
+            ScheduleNotOpenException.class,
+            ScheduleExpiredException.class
+    })
     @ResponseStatus(BAD_REQUEST)
     public ExceptionResponse handleBadRequest(final RuntimeException e, final WebRequest request) {
         final HttpStatus httpStatus = BAD_REQUEST;

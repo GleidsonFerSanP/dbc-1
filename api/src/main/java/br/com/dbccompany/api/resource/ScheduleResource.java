@@ -4,6 +4,7 @@ import br.com.dbccompany.api.mapper.ScheduleAPIMapper;
 import br.com.dbccompany.api.resource.request.v1.ExpiresTimeRequest;
 import br.com.dbccompany.api.resource.request.v1.ScheduleRequest;
 import br.com.dbccompany.api.resource.response.v1.ScheduleResponse;
+import br.com.dbccompany.api.validator.UUID;
 import br.com.dbccompany.core.domain.dto.ScheduleDto;
 import br.com.dbccompany.core.service.ScheduleCreateService;
 import br.com.dbccompany.core.service.ScheduleFindService;
@@ -67,7 +68,7 @@ public class ScheduleResource {
                             schema = @Schema(implementation = ScheduleResponse.class)) }),
             @ApiResponse(responseCode = "404", description = "schedule not found", content = @Content)})
     @PutMapping(value = "/{code}", produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
-    public ResponseEntity<ScheduleResponse> update(@PathVariable final String code,
+    public ResponseEntity<ScheduleResponse> update(@UUID @PathVariable final String code,
                                                    @RequestBody @Valid final ScheduleRequest request, final Errors errors) {
 
         var scheduleDto = scheduleAPIMapper.toDto(request);
@@ -86,7 +87,7 @@ public class ScheduleResource {
                             schema = @Schema(implementation = ScheduleResponse.class)) }),
             @ApiResponse(responseCode = "404", description = "schedule not found", content = @Content)})
     @PutMapping(value = "/{code}/open", produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
-    public ResponseEntity<ScheduleResponse> openVoting(@PathVariable final String code,
+    public ResponseEntity<ScheduleResponse> openVoting(@UUID @PathVariable final String code,
                                                        @Valid @RequestBody(required = false) final ExpiresTimeRequest request,
                                                        final Errors errors) {
 
@@ -101,7 +102,7 @@ public class ScheduleResource {
     @Operation(summary = "Create a Schedule")
     @ApiResponses(value = { @ApiResponse(responseCode = "404", description = "not found", content = @Content)})
     @GetMapping(value = "/{code}", produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
-    public ResponseEntity<ScheduleResponse> findByCode(@PathVariable final String code) {
+    public ResponseEntity<ScheduleResponse> findByCode(@UUID @PathVariable final String code) {
 
         var scheduleDto = scheduleFindService.findByCode(code);
 

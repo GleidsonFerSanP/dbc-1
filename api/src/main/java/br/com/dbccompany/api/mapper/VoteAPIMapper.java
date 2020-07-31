@@ -22,6 +22,9 @@ public interface VoteAPIMapper {
     VoteDto toDto(final VoteRequest request);
 
     @Mapping(target = "scheduleCode", source = "scheduleCode", qualifiedByName = "toScheduleCode")
+    @Mapping(target = "code", source = "code", qualifiedByName = "toScheduleCode")
+    @Mapping(target = "optionSelected", source = "option", qualifiedByName = "toOptionString")
+    @Mapping(target = "voteDate", source = "datCreation")
     VoteResponse toResponse(final VoteDto voteDtoSaved);
 
     @Named("textToUUID")
@@ -37,5 +40,10 @@ public interface VoteAPIMapper {
     @Named("toScheduleCode")
     default String toScheduleCode(final UUID code){
         return code.toString();
+    }
+
+    @Named("toOptionString")
+    default String toOptionString(final VoteOption voteOption){
+        return voteOption.getDescription();
     }
 }

@@ -2,16 +2,24 @@ package br.com.dbccompany.core.service;
 
 import br.com.dbccompany.core.domain.dto.VoteDto;
 import br.com.dbccompany.core.domain.entity.VoteEntity;
-import br.com.dbccompany.core.excepiton.VoteAlreadyExistsException;
+import br.com.dbccompany.core.exception.ScheduleExpiredException;
+import br.com.dbccompany.core.exception.ScheduleNotOpenException;
+import br.com.dbccompany.core.exception.VoteAlreadyExistsException;
 import br.com.dbccompany.core.mapper.VoteMapper;
-import br.com.dbccompany.core.repository.ScheduleRepository;
 import br.com.dbccompany.core.repository.VoteRepository;
+import br.com.dbccompany.core.utils.DateUtils;
+import br.com.dbccompany.core.utils.TimeMachine;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.Optional;
+
+import static br.com.dbccompany.core.utils.TimeMachine.now;
+import static java.util.Objects.isNull;
 
 @Service
 @RequiredArgsConstructor
@@ -22,7 +30,7 @@ public class VoteCreateService {
 
     private final VoteFindService voteFindService;
 
-    private final ScheduleRepository scheduleRepository;
+    private final ScheduleFindService scheduleFindService;
 
     private final VoteMapper voteMapper;
 
@@ -41,8 +49,20 @@ public class VoteCreateService {
         final Optional<VoteEntity> optionalVoteEntity = voteFindService
                 .findByScheduleCodeAndCpf(voteDto.getScheduleCode(), voteDto.getCpf());
 
+        var scheduleDto = scheduleFindService.findByCode(voteDto.getScheduleCode().toString());
+
+        if(isNull(scheduleDto.getExpiration())){
+            throw new ScheduleNotOpenException("this schedule not be open to voting");
+        }
+
         if(optionalVoteEntity.isPresent()){
             throw new VoteAlreadyExistsException("this vote already exists");
+        }
+
+        var expirationLocalDateTime = DateUtils.toLocalDateTime(scheduleDto.getExpiration());
+
+        if(expirationLocalDateTime.isBefore(now())){
+            throw new ScheduleExpiredException("this schedule expired");
         }
     }
 }

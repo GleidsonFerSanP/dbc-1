@@ -131,9 +131,9 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .assertThat()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .body(notNullValue())
-                .body("message", equalTo("this code not is valid"))
-                .body("httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
-                .body("error", equalTo("InvalidCodeException"))
+                .body("errors[0].message", equalTo("Invalid UUID code [code]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
         ;
 
     }
@@ -146,12 +146,12 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .webAppContextSetup(webApplicationContext)
                 .contentType(ContentType.JSON)
                 .when()
-                .get(BASE_URL.concat("/{code}"), TestUtils.randomUUID())
+                .get(BASE_URL.concat("/{code}"), "c64cae8b-6bff-44f6-833b-1128b3613df1")
                 .then()
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.NOT_FOUND.value())
-                .body("message", equalTo("schedule not found by code"))
+                .body("message", equalTo("schedule not found by code ".concat("c64cae8b-6bff-44f6-833b-1128b3613df1")))
                 .body("httpStatus", equalTo(HttpStatus.NOT_FOUND.value()))
                 .body("error", equalTo("NotFoundException"))
         ;
@@ -159,7 +159,7 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("busca uma pauta com sucesso")
-    @Sql("/sql/schedule-insert-3.sql")
+    @Sql("/sql/schedule-insert-8.sql")
     public void findByCodeScheduleSuccess(){
 
         RestAssuredMockMvc.given()

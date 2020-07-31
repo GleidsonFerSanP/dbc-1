@@ -1,7 +1,6 @@
 package br.com.dbccompany.core.service;
 
 import br.com.dbccompany.core.domain.dto.ScheduleDto;
-import br.com.dbccompany.core.excepiton.InvalidExpirationTimeException;
 import br.com.dbccompany.core.mapper.ScheduleMapper;
 import br.com.dbccompany.core.messaging.ScheduleFinishNotifyEnqueue;
 import br.com.dbccompany.core.repository.ScheduleRepository;

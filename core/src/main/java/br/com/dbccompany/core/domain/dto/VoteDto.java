@@ -9,6 +9,8 @@ import java.util.UUID;
 @Data
 public class VoteDto {
 
+    private UUID code;
+
     private UUID scheduleCode;
 
     private VoteOption option;

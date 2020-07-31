@@ -1,4 +1,4 @@
-package br.com.dbccompany.core.excepiton;
+package br.com.dbccompany.core.exception;
 
 public class NotFoundException extends RuntimeException {
 

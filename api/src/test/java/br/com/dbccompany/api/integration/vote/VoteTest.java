@@ -10,6 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.jdbc.Sql;
 
+import static br.com.dbccompany.core.utils.DateUtils.mockCalendar;
 import static org.hamcrest.Matchers.*;
 
 @DisplayName("testes de integração da votação")
@@ -76,6 +77,89 @@ public class VoteTest extends IntegrationBaseTest {
                 .body(containsString("this field cannot be empty [scheduleCode]"))
                 .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
                 .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar um voto para uma pauta que não existe")
+    public void createVoteToScheduleNotExistsFail() {
+        var scheduleCode = "8de44aec-d624-44d7-b14b-d342fc012347";
+        var request = VoteRequest.builder()
+                .scheduleCode(scheduleCode)
+                .cpf("26829510074")
+                .option("Sim")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .body(notNullValue())
+                .body("message", equalTo("schedule not found by code ".concat(scheduleCode)))
+                .body("httpStatus", equalTo(HttpStatus.NOT_FOUND.value()))
+                .body("error", equalTo("NotFoundException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar um voto para uma pauta que expirou o periodo de votação")
+    @Sql("/sql/schedule-insert-with-expiration-date.sql")
+    public void createVoteToScheduleExpiredVotesFail() {
+        var scheduleCode = "8de44aec-d624-44d7-b14b-d342fc0bf156";
+        var request = VoteRequest.builder()
+                .scheduleCode(scheduleCode)
+                .cpf("26829510074")
+                .option("Sim")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("message", equalTo("this schedule expired"))
+                .body("httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("error", equalTo("ScheduleExpiredException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar um voto para uma pauta que não foi aberta votação")
+    @Sql("/sql/schedule-insert-3.sql")
+    public void createVoteToScheduleNotOpenVotesFail() {
+        var scheduleCode = "8de44aec-d624-44d7-b14b-d342fc0bf14c";
+        var request = VoteRequest.builder()
+                .scheduleCode(scheduleCode)
+                .cpf("26829510074")
+                .option("Sim")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("message", equalTo("this schedule not be open to voting"))
+                .body("httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("error", equalTo("ScheduleNotOpenException"))
         ;
     }
 
@@ -228,6 +312,8 @@ public class VoteTest extends IntegrationBaseTest {
                 .option("Sim")
                 .build();
 
+        mockCalendar(2020,07,29,21);
+
         RestAssuredMockMvc.given()
                 .webAppContextSetup(webApplicationContext)
                 .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
@@ -244,50 +330,60 @@ public class VoteTest extends IntegrationBaseTest {
                 .body("error", equalTo("VoteAlreadyExistsException"))
         ;
     }
-//
-//    @Test
-//    @DisplayName("cria uma pauta com sucesso")
-//    public void createVotesSuccess(){
-//
-//        var request = VotesRequest.builder()
-//                .title(TestUtils.randomText(10))
-//                .build();
-//
-//        RestAssuredMockMvc.given()
-//                .webAppContextSetup(webApplicationContext)
-//                .body(request)
-//                .contentType(ContentType.JSON)
-//                .when()
-//                .post(BASE_URL)
-//                .then()
-//                .log().body().and()
-//                .assertThat()
-//                .statusCode(HttpStatus.CREATED.value());
-//
-//    }
-//
-//    @Test
-//    @DisplayName("busca todas as pautas com sucesso")
-//    @Sql("/sql/delete-all-schedules.sql")
-//    @Sql("/sql/schedules-inserts.sql")
-//    public void getAllVotesSuccess(){
-//
-//        RestAssuredMockMvc.given()
-//                .webAppContextSetup(webApplicationContext)
-//                .contentType(ContentType.JSON)
-//                .when()
-//                .get(BASE_URL)
-//                .then()
-//                .log().body().and()
-//                .assertThat()
-//                .statusCode(HttpStatus.OK.value())
-//                .body(notNullValue())
-//                .body("content", notNullValue())
-//                .body("content[0].code", notNullValue())
-//                .body("content[0].title", equalTo("title"))
-//        ;
-//
-//    }
+
+    @Test
+    @DisplayName("vota em uma pauta com sucesso")
+    @Sql("/sql/schedule-insert-7.sql")
+    public void createVotesSuccess(){
+
+        var request = VoteRequest.builder()
+                .scheduleCode("8de44aec-d624-44d7-b14b-d342fc0bf147")
+                .cpf("26829510074")
+                .option("Sim")
+                .build();
+
+        mockCalendar(2020,07,29,10);
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .body(request)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.CREATED.value())
+                .body("scheduleCode", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf147"))
+                .body("optionSelected", equalTo("Sim"))
+                .body("voteDate", notNullValue())
+        ;
+
+    }
+
+    @Test
+    @DisplayName("busca todas os votos de uma pauta com sucesso")
+    @Sql("/sql/votes-insert-to-a-schedule.sql")
+    public void getAllVotesFromAScheduleSuccess(){
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .queryParam("scheduleCode", "8de44aec-d624-44d7-b14b-d342fc0bf1d9")
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .when()
+                .get(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.OK.value())
+                .body(notNullValue())
+                .body("content", notNullValue())
+                .body("content[0].scheduleCode", notNullValue())
+                .body("content[0].optionSelected", notNullValue())
+                .body("content[0].voteDate", notNullValue())
+        ;
+
+    }
 //
 //    @Test
 //    @DisplayName("busca uma pauta usando um code inválido")

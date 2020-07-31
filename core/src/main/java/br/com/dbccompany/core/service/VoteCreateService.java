@@ -22,6 +22,8 @@ public class VoteCreateService {
 
     private final VoteFindService voteFindService;
 
+    private final ScheduleRepository scheduleRepository;
+
     private final VoteMapper voteMapper;
 
     public VoteDto create(@NonNull final VoteDto voteDto) {

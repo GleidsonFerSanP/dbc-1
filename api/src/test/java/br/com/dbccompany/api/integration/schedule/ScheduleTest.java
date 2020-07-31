@@ -4,15 +4,13 @@ import br.com.dbccompany.api.integration.IntegrationBaseTest;
 import br.com.dbccompany.api.resource.mediatype.V1MediaType;
 import br.com.dbccompany.api.resource.request.v1.ExpiresTimeRequest;
 import br.com.dbccompany.api.resource.request.v1.ScheduleRequest;
-import br.com.dbccompany.api.utils.TestUtils;
+import br.com.dbccompany.core.utils.TestUtils;
 import io.restassured.http.ContentType;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlConfig;
-import org.springframework.test.context.jdbc.SqlGroup;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -41,7 +39,7 @@ public class ScheduleTest extends IntegrationBaseTest {
     @DisplayName("falha ao realizar um POST sem definir um media type")
     public void createScheduleValidateMediaTypeBodyFail(){
 
-        var request = ScheduleRequest.builder()
+        final var request = ScheduleRequest.builder()
                 .build();
 
         RestAssuredMockMvc.given()
@@ -99,7 +97,6 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("busca todas as pautas com sucesso")
-    @Sql("/sql/delete-all-schedules.sql")
     @Sql("/sql/schedules-inserts.sql")
     public void getAllScheduleSuccess(){
 
@@ -115,7 +112,7 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .body(notNullValue())
                 .body("content", notNullValue())
                 .body("content[0].code", notNullValue())
-                .body("content[0].title", equalTo("title"))
+                .body("content[0].title", notNullValue())
         ;
 
     }
@@ -162,22 +159,21 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("busca uma pauta com sucesso")
-    @Sql("/sql/delete-all-schedules.sql")
-    @Sql("/sql/schedule-insert.sql")
+    @Sql("/sql/schedule-insert-3.sql")
     public void findByCodeScheduleSuccess(){
 
         RestAssuredMockMvc.given()
                 .webAppContextSetup(webApplicationContext)
                 .contentType(ContentType.JSON)
                 .when()
-                .get(BASE_URL.concat("/{code}"), "8de44aec-d624-44d7-b14b-d342fc0bf14e")
+                .get(BASE_URL.concat("/{code}"), "8de44aec-d624-44d7-b14b-d342fc0bf14c")
                 .then()
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.OK.value())
                 .body(notNullValue())
-                .body("code", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf14e"))
-                .body("title", equalTo("title"))
+                .body("code", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf14c"))
+                .body("title",  equalTo("title"))
                 .body("expiration", equalTo(null))
         ;
     }
@@ -226,8 +222,7 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("tenta atualizar uma pauta com um code que não existe e falha")
-    @Sql("/sql/delete-all-schedules.sql")
-    @Sql("/sql/schedule-insert.sql")
+    @Sql("/sql/schedule-insert-5.sql")
     public void updateScheduleCauseNotFound(){
 
         var request = ScheduleRequest.builder()
@@ -239,7 +234,7 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .body(request)
                 .contentType(ContentType.JSON)
                 .when()
-                .put(BASE_URL.concat("/{code}"), "8de44aec-d624-44d7-b14b-d342fc0bf14a")
+                .put(BASE_URL.concat("/{code}"), "8de44aec-d624-44d7-b14b-d342fc0bf14d")
                 .then()
                 .log().body().and()
                 .assertThat()
@@ -253,21 +248,20 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("abre a votação de uma pauta com sucesso")
-    @Sql("/sql/delete-all-schedules.sql")
-    @Sql("/sql/schedule-insert.sql")
+    @Sql("/sql/schedule-insert-1.sql")
     public void updateScheduleToOpenSuccess(){
 
         RestAssuredMockMvc.given()
                 .webAppContextSetup(webApplicationContext)
                 .contentType(ContentType.JSON)
                 .when()
-                .put(BASE_URL.concat("/{code}/open"), "8de44aec-d624-44d7-b14b-d342fc0bf14e")
+                .put(BASE_URL.concat("/{code}/open"), "8de44aec-d624-44d7-b14b-d342fc0bf14a")
                 .then()
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.OK.value())
                 .body(notNullValue())
-                .body("code", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf14e"))
+                .body("code", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf14a"))
                 .body("title", equalTo("title"))
                 .body("expiration", notNullValue())
         ;
@@ -275,8 +269,7 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("atualiza o título de uma pauta com sucesso")
-    @Sql("/sql/delete-all-schedules.sql")
-    @Sql("/sql/schedule-insert.sql")
+    @Sql("/sql/schedule-insert-2.sql")
     public void updateTitleScheduleSuccess(){
 
         var randomTitle = TestUtils.randomText(10);
@@ -290,13 +283,13 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .body(request)
                 .contentType(ContentType.JSON)
                 .when()
-                .put(BASE_URL.concat("/{code}"), "8de44aec-d624-44d7-b14b-d342fc0bf14e")
+                .put(BASE_URL.concat("/{code}"), "8de44aec-d624-44d7-b14b-d342fc0bf14b")
                 .then()
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.OK.value())
                 .body(notNullValue())
-                .body("code", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf14e"))
+                .body("code", equalTo("8de44aec-d624-44d7-b14b-d342fc0bf14b"))
                 .body("title", equalTo(randomTitle))
                 .body("expiration", equalTo(null))
         ;
@@ -304,7 +297,6 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("abre a votação de uma pauta com sucesso passando o tempo de expiração")
-    @Sql("/sql/delete-all-schedules.sql")
     @Sql("/sql/schedule-insert.sql")
     public void updateScheduleToOpenWithTimeSuccess(){
 
@@ -329,8 +321,7 @@ public class ScheduleTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("ao tentar abrir uma pauta para votação com tempo de expiração negativo falha")
-    @Sql("/sql/delete-all-schedules.sql")
-    @Sql("/sql/schedule-insert.sql")
+    @Sql("/sql/schedule-insert-6.sql")
     public void updateScheduleToOpenWithNegativeMinutesFail(){
 
         var expiresTimeInMinutes = -10;
@@ -340,7 +331,7 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .webAppContextSetup(webApplicationContext)
                 .contentType(ContentType.JSON)
                 .when()
-                .put(BASE_URL.concat("/{code}/open"), "8de44aec-d624-44d7-b14b-d342fc0bf14e")
+                .put(BASE_URL.concat("/{code}/open"), "8de44aec-d624-44d7-b14b-d342fc0bf146")
                 .then()
                 .log().body().and()
                 .assertThat()

@@ -1,16 +1,11 @@
 package br.com.dbccompany.api.unit;
 
-import br.com.dbccompany.api.utils.TestUtils;
 import br.com.dbccompany.api.validator.UUIDValidator;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.springframework.test.context.ContextConfiguration;
 
-import javax.validation.ConstraintValidatorContext;
-
-import static br.com.dbccompany.api.utils.TestUtils.randomText;
-import static br.com.dbccompany.api.utils.TestUtils.randomUUID;
+import static br.com.dbccompany.core.utils.TestUtils.randomText;
+import static br.com.dbccompany.core.utils.TestUtils.randomUUID;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

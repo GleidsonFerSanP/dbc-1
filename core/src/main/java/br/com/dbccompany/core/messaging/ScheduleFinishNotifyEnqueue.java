@@ -14,12 +14,13 @@ public class ScheduleFinishNotifyEnqueue {
 
     private static final String ROUTING_KEY = "createdScheduleRoutingKey";
 
-    private final RabbitTemplate rabbit;
+    private final RabbitTemplate rabbitTemplate;
 
     public void send(final String message, final Integer ttl) {
-        log.info("I=send message={}, exchange={}, ttl={}", message, EXCHANGE_NAME, ttl);
-        rabbit.convertAndSend(EXCHANGE_NAME, ROUTING_KEY, message,
+        log.info("I=send, message={}, exchange={}, ttl={}", message, EXCHANGE_NAME, ttl);
+        rabbitTemplate.convertAndSend(EXCHANGE_NAME, ROUTING_KEY, message,
                 new ExpirationMessagePostProcessor(convertMinutesInMilliseconds(ttl)));
+        log.info("I=success send, message={}, exchange={}, ttl={}", message, EXCHANGE_NAME, ttl);
     }
 
     private Long convertMinutesInMilliseconds(Integer ttl) {

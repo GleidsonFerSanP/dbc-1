@@ -1,4 +1,4 @@
-package br.com.dbccompany.api.utils;
+package br.com.dbccompany.core.utils;
 
 import java.util.Random;
 import java.util.UUID;

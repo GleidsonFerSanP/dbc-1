@@ -3,16 +3,14 @@ package br.com.dbccompany.api.integration.vote;
 import br.com.dbccompany.api.integration.IntegrationBaseTest;
 import br.com.dbccompany.api.resource.mediatype.V1MediaType;
 import br.com.dbccompany.api.resource.request.v1.VoteRequest;
-import br.com.dbccompany.api.utils.TestUtils;
+import br.com.dbccompany.core.utils.TestUtils;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlGroup;
 
 import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.containsString;
 
 @DisplayName("testes de integração da votação")
 public class VoteTest extends IntegrationBaseTest {
@@ -222,15 +220,12 @@ public class VoteTest extends IntegrationBaseTest {
 
     @Test
     @DisplayName("falha ao criar um voto para uma pauta da qual já votou")
-    @Sql("/sql/delete-all-schedules.sql")
-    @Sql("/sql/delete-all-votes.sql")
     @Sql("/sql/vote-insert-to-cpf-00253361001.sql")
     public void ifThereAreAlreadyVotesOfThisCfpForThisSchedulePreviouslyFails() {
-
         var request = VoteRequest.builder()
-                .scheduleCode("8de44aec-d624-44d7-b14b-d342fc0bf14e")
+                .scheduleCode("8de44aec-d624-44d7-b14b-d342fc0bf142")
                 .cpf("00253361001")
-                .option("Nao")
+                .option("Sim")
                 .build();
 
         RestAssuredMockMvc.given()

@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.Type;
 
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.UUID;
@@ -12,15 +13,12 @@ import java.util.UUID;
 @MappedSuperclass
 @Getter
 @ToString
+@NoArgsConstructor
 public class RootEntity {
 
     @Id
-    @Type(type = "pg-uuid")
+    @GeneratedValue
     private UUID code;
-
-    public RootEntity() {
-        this.code = UUID.randomUUID();
-    }
 
     public RootEntity(final UUID code) {
         this.code = code;

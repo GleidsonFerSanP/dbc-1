@@ -1,12 +1,13 @@
 package br.com.dbccompany.core.domain.dto;
 
+import br.com.dbccompany.core.domain.entity.VoteOption;
 import lombok.Data;
+
+import java.math.BigDecimal;
 
 @Data
 public class VoteResultDto {
-
-    private String scheduleTitle;
-    private String scheduleDescription;
-    private Integer optionYes;
-    private Integer optionNo;
+    private String scheduleCode;
+    private VoteOption option;
+    private BigDecimal quantity;
 }

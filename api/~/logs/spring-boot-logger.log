@@ -11137,3 +11137,942 @@ Matched-Stub-Id: [ef11eff4-70e2-4977-95a5-45a9e3738077]
 2020-08-01 14:53:16,175 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-2 - Shutdown initiated...
 2020-08-01 14:53:16,186 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
 2020-08-01 14:53:16,191 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-2 - Shutdown completed.
+2020-08-01 15:24:42,051 INFO org.springframework.boot.SpringApplication [Test worker] The following profiles are active: test
+2020-08-01 15:24:44,677 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 15:24:44,681 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-01 15:24:44,797 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [Test worker] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.ScheduleRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 15:24:44,801 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [Test worker] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.VoteRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 15:24:44,816 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Finished Spring Data repository scanning in 117ms. Found 0 JDBC repository interfaces.
+2020-08-01 15:24:44,858 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 15:24:44,861 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-01 15:24:45,423 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Finished Spring Data repository scanning in 547ms. Found 2 JPA repository interfaces.
+2020-08-01 15:24:45,825 INFO org.springframework.cloud.context.scope.GenericScope [Test worker] BeanFactory id=246ee6ed-31a7-3077-9685-0d8dafbe1415
+2020-08-01 15:24:46,959 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [Test worker] Bean 'br.com.dbccompany.core.integration.client.HubDevClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-01 15:24:47,782 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [Test worker] Tomcat initialized with port(s): 0 (http)
+2020-08-01 15:24:47,798 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing ProtocolHandler ["http-nio-auto-1"]
+2020-08-01 15:24:47,799 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Starting service [Tomcat]
+2020-08-01 15:24:47,800 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-01 15:24:47,987 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring embedded WebApplicationContext
+2020-08-01 15:24:47,988 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [Test worker] Root WebApplicationContext: initialization completed in 5925 ms
+2020-08-01 15:24:48,593 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Flyway Community Edition 6.4.4 by Redgate
+2020-08-01 15:24:48,600 INFO com.zaxxer.hikari.HikariDataSource [Test worker] HikariPool-1 - Starting...
+2020-08-01 15:24:48,846 INFO com.zaxxer.hikari.HikariDataSource [Test worker] HikariPool-1 - Start completed.
+2020-08-01 15:24:48,869 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Database: jdbc:h2:mem:testdb (H2 1.4)
+2020-08-01 15:24:48,945 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Successfully validated 3 migrations (execution time 00:00.027s)
+2020-08-01 15:24:48,977 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-08-01 15:24:49,058 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Current version of schema "PUBLIC": << Empty Schema >>
+2020-08-01 15:24:49,066 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Migrating schema "PUBLIC" to version 290720201500 - create-table-schedule
+2020-08-01 15:24:49,211 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Migrating schema "PUBLIC" to version 300720200000 - create-table-vote
+2020-08-01 15:24:49,276 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Migrating schema "PUBLIC" to version 300720210000 - alter-table-vote-add-constraint-unique-cpf-schedule
+2020-08-01 15:24:49,332 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Successfully applied 3 migrations to schema "PUBLIC" (execution time 00:00.289s)
+2020-08-01 15:24:49,479 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Test worker] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-01 15:24:49,590 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-01 15:24:49,686 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-01 15:24:49,762 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-01 15:24:49,914 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2020-08-01 15:24:50,469 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [Test worker] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 15:24:50,770 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-01 15:24:50,779 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 15:24:51,236 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [Test worker] Spring Data repositories initialized!
+2020-08-01 15:24:52,159 INFO wiremock.org.eclipse.jetty.util.log.Log [Test worker] Logging initialized @16913ms
+2020-08-01 15:24:52,707 WARN com.netflix.config.sources.URLConfigurationSource [Test worker] No URLs will be polled as dynamic configuration sources.
+2020-08-01 15:24:52,708 INFO com.netflix.config.sources.URLConfigurationSource [Test worker] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 15:24:52,717 WARN com.netflix.config.sources.URLConfigurationSource [Test worker] No URLs will be polled as dynamic configuration sources.
+2020-08-01 15:24:52,718 INFO com.netflix.config.sources.URLConfigurationSource [Test worker] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 15:24:56,412 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [Test worker] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-08-01 15:24:56,599 INFO org.apache.kafka.common.config.AbstractConfig [Test worker] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-01 15:24:56,743 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka version: 2.5.0
+2020-08-01 15:24:56,744 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka commitId: 66563e712b0b9f84
+2020-08-01 15:24:56,745 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka startTimeMs: 1596306296742
+2020-08-01 15:24:57,321 INFO wiremock.org.eclipse.jetty.server.Server [Test worker] jetty-9.2.z-SNAPSHOT
+2020-08-01 15:24:57,353 INFO wiremock.org.eclipse.jetty.server.handler.ContextHandler [Test worker] Started w.o.e.j.s.ServletContextHandler@2f00e993{/__admin,null,AVAILABLE}
+2020-08-01 15:24:57,357 INFO wiremock.org.eclipse.jetty.server.handler.ContextHandler [Test worker] Started w.o.e.j.s.ServletContextHandler@4336877b{/,null,AVAILABLE}
+2020-08-01 15:24:57,381 INFO wiremock.org.eclipse.jetty.server.AbstractConnector [Test worker] Started NetworkTrafficServerConnector@294f0ba1{HTTP/1.1}{0.0.0.0:11839}
+2020-08-01 15:24:57,446 INFO wiremock.org.eclipse.jetty.server.AbstractConnector [Test worker] Started NetworkTrafficServerConnector@6218f014{SSL-http/1.1}{0.0.0.0:14577}
+2020-08-01 15:24:57,446 INFO wiremock.org.eclipse.jetty.server.Server [Test worker] Started @22201ms
+2020-08-01 15:24:57,447 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Starting ProtocolHandler ["http-nio-auto-1"]
+2020-08-01 15:24:57,488 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [Test worker] Tomcat started on port(s): 35459 (http) with context path ''
+2020-08-01 15:24:57,496 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [Test worker] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 15:24:57,497 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [Test worker] Spring Data repositories initialized!
+2020-08-01 15:24:57,533 INFO org.springframework.boot.StartupInfoLogger [Test worker] Started VoteTest in 18.647 seconds (JVM running for 22.288)
+2020-08-01 15:24:57,892 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:24:57,894 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:24:57,909 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 14 ms
+2020-08-01 15:24:58,123 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.birthday: this field accept format date DD/MM/YYYY, create.request.scheduleCode: this field cannot be empty, create.request.birthday: this field cannot be empty, format DD/MM/YYYY, create.request.scheduleCode: Invalid UUID code
+2020-08-01 15:24:59,036 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:24:59,037 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:24:59,041 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 3 ms
+2020-08-01 15:24:59,067 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:24:59,067 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:24:59,074 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 6 ms
+2020-08-01 15:24:59,200 INFO wiremock.org.eclipse.jetty.server.handler.ContextHandler$Context [qtp751345158-88] RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+2020-08-01 15:24:59,291 INFO com.github.tomakehurst.wiremock.common.Slf4jNotifier [qtp751345158-88] Request received:
+127.0.0.1 - GET /?cpf=13772988091&data=29/07/1979&token=93561250HZYxvoczWF168922000
+
+User-Agent: [Java/11.0.7]
+Connection: [keep-alive]
+Host: [localhost:11839]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{ \"status\": false }",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [41b79f6a-c384-41cd-8587-407179a123de]
+
+
+2020-08-01 15:24:59,319 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] M=handle NotFoundException status=404 message=this cpf not exists on brazilian receita federal
+2020-08-01 15:24:59,400 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:24:59,401 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:24:59,406 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 4 ms
+2020-08-01 15:24:59,418 INFO com.github.tomakehurst.wiremock.common.Slf4jNotifier [qtp751345158-104] Request received:
+127.0.0.1 - GET /?cpf=26829510074&data=29/07/1979&token=93561250HZYxvoczWF168922000
+
+User-Agent: [Java/11.0.7]
+Connection: [keep-alive]
+Host: [localhost:11839]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{ \"status\": true }",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [aa0dd24c-a30b-4893-9269-cc2092e39c0c]
+
+
+2020-08-01 15:24:59,424 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf, uuid=8de44aec-d624-44d7-b14b-d342fc0bf14c, cpf=26829510074
+2020-08-01 15:24:59,701 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:24:59,702 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=init find schedule, code=8de44aec-d624-44d7-b14b-d342fc0bf14c
+2020-08-01 15:24:59,792 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=schedule has be found, schedule=ScheduleDto(code=8de44aec-d624-44d7-b14b-d342fc0bf14c, title=title, description=null, expiration=null)
+2020-08-01 15:24:59,820 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] M=handleBadRequest status=400 message=this schedule not be open to voting
+2020-08-01 15:24:59,884 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:24:59,884 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:24:59,888 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 3 ms
+2020-08-01 15:24:59,894 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.option: options valids are [Sim, Nao], create.request.option: option is required [Sim, Nao], create.request.birthday: this field accept format date DD/MM/YYYY, create.request.birthday: this field cannot be empty, format DD/MM/YYYY
+2020-08-01 15:24:59,960 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:24:59,961 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:24:59,966 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 4 ms
+2020-08-01 15:24:59,988 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.birthday: this field accept format date DD/MM/YYYY, create.request.birthday: this field cannot be empty, format DD/MM/YYYY
+2020-08-01 15:25:00,052 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,052 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,058 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 5 ms
+2020-08-01 15:25:00,069 INFO com.github.tomakehurst.wiremock.common.Slf4jNotifier [qtp751345158-88] Request received:
+127.0.0.1 - GET /?cpf=26829510074&data=29/07/1979&token=93561250HZYxvoczWF168922000
+
+User-Agent: [Java/11.0.7]
+Connection: [keep-alive]
+Host: [localhost:11839]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{ \"status\": true }",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [aa0dd24c-a30b-4893-9269-cc2092e39c0c]
+
+
+2020-08-01 15:25:00,076 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf, uuid=8de44aec-d624-44d7-b14b-d342fc0bf142, cpf=26829510074
+2020-08-01 15:25:00,115 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional[VoteEntity(schedule=ScheduleEntity(title=title, description=null, datCreation=2020-07-29 16:29:50.684, datUpdate=2020-07-29 16:29:50.684, expiration=2020-07-29 16:29:50.684), option=YES, cpf=26829510074, datCreation=2020-07-29 16:29:50.684)]
+2020-08-01 15:25:00,130 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=init find schedule, code=8de44aec-d624-44d7-b14b-d342fc0bf142
+2020-08-01 15:25:00,134 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=schedule has be found, schedule=ScheduleDto(code=8de44aec-d624-44d7-b14b-d342fc0bf142, title=title, description=null, expiration=2020-07-29 16:29:50.684)
+2020-08-01 15:25:00,135 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] M=handleConflict status=409 message=this vote already exists
+2020-08-01 15:25:00,221 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,221 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,226 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 4 ms
+2020-08-01 15:25:00,237 INFO com.github.tomakehurst.wiremock.common.Slf4jNotifier [qtp751345158-104] Request received:
+127.0.0.1 - GET /?cpf=26829510074&data=29/07/1979&token=93561250HZYxvoczWF168922000
+
+User-Agent: [Java/11.0.7]
+Connection: [keep-alive]
+Host: [localhost:11839]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{ \"status\": true }",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [aa0dd24c-a30b-4893-9269-cc2092e39c0c]
+
+
+2020-08-01 15:25:00,242 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf, uuid=8de44aec-d624-44d7-b14b-d342fc012347, cpf=26829510074
+2020-08-01 15:25:00,249 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:25:00,249 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=init find schedule, code=8de44aec-d624-44d7-b14b-d342fc012347
+2020-08-01 15:25:00,252 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] M=handle NotFoundException status=404 message=schedule not found by code 8de44aec-d624-44d7-b14b-d342fc012347
+2020-08-01 15:25:00,313 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,313 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,316 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 3 ms
+2020-08-01 15:25:00,327 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCode, scheduleCode=8de44aec-d624-44d7-b14b-d342fc0bf1d9
+2020-08-01 15:25:00,336 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCode success, size=2
+2020-08-01 15:25:00,423 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,423 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,426 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 2 ms
+2020-08-01 15:25:00,444 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,444 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,451 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 7 ms
+2020-08-01 15:25:00,458 INFO com.github.tomakehurst.wiremock.common.Slf4jNotifier [qtp751345158-88] Request received:
+127.0.0.1 - GET /?cpf=26829510074&data=29/07/1979&token=93561250HZYxvoczWF168922000
+
+User-Agent: [Java/11.0.7]
+Connection: [keep-alive]
+Host: [localhost:11839]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{ \"status\": true }",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [aa0dd24c-a30b-4893-9269-cc2092e39c0c]
+
+
+2020-08-01 15:25:00,463 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf, uuid=8de44aec-d624-44d7-b14b-d342fc0bf156, cpf=26829510074
+2020-08-01 15:25:00,469 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:25:00,471 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=init find schedule, code=8de44aec-d624-44d7-b14b-d342fc0bf156
+2020-08-01 15:25:00,474 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=schedule has be found, schedule=ScheduleDto(code=8de44aec-d624-44d7-b14b-d342fc0bf156, title=title, description=null, expiration=2020-07-29 16:29:50.684)
+2020-08-01 15:25:00,475 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] M=handleBadRequest status=400 message=this schedule expired
+2020-08-01 15:25:00,528 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,528 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,532 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 3 ms
+2020-08-01 15:25:00,538 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.cpf: this field size required 11 characters
+2020-08-01 15:25:00,620 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,620 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,624 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 3 ms
+2020-08-01 15:25:00,630 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.cpf: cpf is required
+2020-08-01 15:25:00,689 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,689 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,696 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 6 ms
+2020-08-01 15:25:00,718 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.cpf: invalid Brazilian individual taxpayer registry number (CPF)
+2020-08-01 15:25:00,779 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,780 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,784 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 3 ms
+2020-08-01 15:25:00,789 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.cpf: this field size required 11 characters, create.request.cpf: invalid Brazilian individual taxpayer registry number (CPF)
+2020-08-01 15:25:00,847 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:00,848 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:00,856 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 6 ms
+2020-08-01 15:25:00,864 INFO com.github.tomakehurst.wiremock.common.Slf4jNotifier [qtp751345158-104] Request received:
+127.0.0.1 - GET /?cpf=26829510074&data=29/07/1979&token=93561250HZYxvoczWF168922000
+
+User-Agent: [Java/11.0.7]
+Connection: [keep-alive]
+Host: [localhost:11839]
+Accept: [*/*]
+
+
+
+Matched response definition:
+{
+  "status" : 200,
+  "body" : "{ \"status\": true }",
+  "headers" : {
+    "Content-Type" : "application/json"
+  }
+}
+
+Response:
+HTTP/1.1 200
+Content-Type: [application/json]
+Matched-Stub-Id: [aa0dd24c-a30b-4893-9269-cc2092e39c0c]
+
+
+2020-08-01 15:25:00,871 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf, uuid=8de44aec-d624-44d7-b14b-d342fc0bf147, cpf=26829510074
+2020-08-01 15:25:00,874 INFO br.com.dbccompany.core.service.VoteFindService [Test worker] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:25:00,875 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=init find schedule, code=8de44aec-d624-44d7-b14b-d342fc0bf147
+2020-08-01 15:25:00,878 INFO br.com.dbccompany.core.service.ScheduleFindService [Test worker] I=schedule has be found, schedule=ScheduleDto(code=8de44aec-d624-44d7-b14b-d342fc0bf147, title=title, description=null, expiration=2020-07-29 16:29:50.684)
+2020-08-01 15:25:00,879 INFO br.com.dbccompany.core.service.VoteCreateService [Test worker] I=saving a new, vote=VoteDto(code=null, scheduleCode=8de44aec-d624-44d7-b14b-d342fc0bf147, option=YES, cpf=26829510074, datCreation=null, birthday=29/07/1979)
+2020-08-01 15:25:00,981 INFO br.com.dbccompany.core.service.VoteCreateService [Test worker] I=saved with success, vote=VoteDto(code=e6043e8c-973e-4433-b588-9351b4776ae4, scheduleCode=8de44aec-d624-44d7-b14b-d342fc0bf147, option=YES, cpf=26829510074, datCreation=Sat Aug 01 15:25:00 BRT 2020, birthday=null)
+2020-08-01 15:25:01,028 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:01,029 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:01,033 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 3 ms
+2020-08-01 15:25:01,038 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.option: options valids are [Sim, Nao]
+2020-08-01 15:25:01,107 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:01,108 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:01,115 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 5 ms
+2020-08-01 15:25:01,121 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.birthday: this field accept format date DD/MM/YYYY
+2020-08-01 15:25:01,188 INFO org.apache.juli.logging.DirectJDKLog [Test worker] Initializing Spring TestDispatcherServlet ''
+2020-08-01 15:25:01,189 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Initializing Servlet ''
+2020-08-01 15:25:01,199 INFO org.springframework.web.servlet.FrameworkServlet [Test worker] Completed initialization in 7 ms
+2020-08-01 15:25:01,209 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [Test worker] I=validation error, message=create.request.scheduleCode: Invalid UUID code
+2020-08-01 15:25:01,320 INFO wiremock.org.eclipse.jetty.server.AbstractConnector [SpringContextShutdownHook] Stopped NetworkTrafficServerConnector@294f0ba1{HTTP/1.1}{0.0.0.0:11839}
+2020-08-01 15:25:01,330 INFO wiremock.org.eclipse.jetty.server.AbstractConnector [SpringContextShutdownHook] Stopped NetworkTrafficServerConnector@6218f014{SSL-http/1.1}{0.0.0.0:14577}
+2020-08-01 15:25:01,332 INFO wiremock.org.eclipse.jetty.server.handler.ContextHandler [SpringContextShutdownHook] Stopped w.o.e.j.s.ServletContextHandler@4336877b{/,null,UNAVAILABLE}
+2020-08-01 15:25:01,332 INFO wiremock.org.eclipse.jetty.server.handler.ContextHandler [SpringContextShutdownHook] Stopped w.o.e.j.s.ServletContextHandler@2f00e993{/__admin,null,UNAVAILABLE}
+2020-08-01 15:25:01,356 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 15:25:01,361 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-01 15:25:01,363 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-01 15:25:01,370 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-01 15:42:46,822 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-01 15:42:47,053 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-01 15:42:47,910 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 15:42:47,910 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-01 15:42:47,934 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.ScheduleRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 15:42:47,936 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.VoteRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 15:42:47,939 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 26ms. Found 0 JDBC repository interfaces.
+2020-08-01 15:42:47,945 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 15:42:47,946 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-01 15:42:47,974 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 26ms. Found 2 JPA repository interfaces.
+2020-08-01 15:42:48,229 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=e7ccec4d-1aab-3eaa-834f-a9025553d884
+2020-08-01 15:42:48,271 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'br.com.dbccompany.core.integration.client.HubDevClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-01 15:42:48,811 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-01 15:42:48,817 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-01 15:42:48,818 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-01 15:42:48,818 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-01 15:42:48,881 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-01 15:42:48,882 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1816 ms
+2020-08-01 15:42:49,054 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-01 15:42:49,109 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-01 15:42:49,140 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:15432/sicred'
+2020-08-01 15:42:49,315 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Flyway Community Edition 6.4.4 by Redgate
+2020-08-01 15:42:49,323 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:15432/sicred (PostgreSQL 12.3)
+2020-08-01 15:42:49,345 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Successfully validated 3 migrations (execution time 00:00.012s)
+2020-08-01 15:42:49,351 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Current version of schema "public": 300720210000
+2020-08-01 15:42:49,352 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2020-08-01 15:42:49,446 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-01 15:42:49,481 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-01 15:42:49,521 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-01 15:42:49,608 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-01 15:42:49,698 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2020-08-01 15:42:50,153 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-08-01 15:42:50,159 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 15:42:50,244 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-01 15:42:50,249 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 15:42:50,462 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 15:42:50,852 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 15:42:50,852 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 15:42:50,856 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 15:42:50,856 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 15:42:52,345 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-08-01 15:42:52,431 INFO org.apache.kafka.common.config.AbstractConfig [restartedMain] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-01 15:42:52,484 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka version: 2.5.0
+2020-08-01 15:42:52,484 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka commitId: 66563e712b0b9f84
+2020-08-01 15:42:52,484 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka startTimeMs: 1596307372483
+2020-08-01 15:42:52,635 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-08-01 15:42:52,648 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-01 15:42:52,655 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 15:42:52,655 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 15:42:52,672 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ApiApplication in 6.279 seconds (JVM running for 6.762)
+2020-08-01 15:43:41,841 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-01 15:43:41,842 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-08-01 15:43:41,873 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 30 ms
+2020-08-01 15:43:42,172 INFO br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-2] I=validation error, message=create.request.birthday: this field accept format date DD/MM/YYYY
+2020-08-01 15:43:42,224 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [javax.validation.ConstraintViolationException: create.request.birthday: this field accept format date DD/MM/YYYY]
+2020-08-01 15:44:12,185 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-4] M=handleInternalError status=500 message=Read timed out executing GET https://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=22757066153&data=09/04/1997&token=93561250HZYxvoczWF168922000
+2020-08-01 15:44:12,190 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [feign.RetryableException: Read timed out executing GET https://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=22757066153&data=09/04/1997&token=93561250HZYxvoczWF168922000]
+2020-08-01 15:44:26,803 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-6] M=handle NotFoundException status=404 message=this cpf not exists on brazilian receita federal
+2020-08-01 15:44:26,806 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [br.com.dbccompany.core.exception.UserNotFoundException: this cpf not exists on brazilian receita federal]
+2020-08-01 15:44:57,027 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-7] M=handle NotFoundException status=404 message=this cpf not exists on brazilian receita federal
+2020-08-01 15:44:57,032 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [br.com.dbccompany.core.exception.UserNotFoundException: this cpf not exists on brazilian receita federal]
+2020-08-01 15:45:15,467 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 15:45:15,473 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-01 15:45:15,476 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-01 15:45:15,499 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-01 15:45:35,158 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-01 15:45:35,654 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-01 15:45:36,682 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 15:45:36,683 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-01 15:45:36,711 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.ScheduleRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 15:45:36,713 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.VoteRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 15:45:36,717 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 31ms. Found 0 JDBC repository interfaces.
+2020-08-01 15:45:36,725 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 15:45:36,725 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-01 15:45:36,763 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 34ms. Found 2 JPA repository interfaces.
+2020-08-01 15:45:37,007 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=e7ccec4d-1aab-3eaa-834f-a9025553d884
+2020-08-01 15:45:37,047 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'br.com.dbccompany.core.integration.client.HubDevClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-01 15:45:37,648 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-01 15:45:37,662 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-01 15:45:37,663 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-01 15:45:37,664 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-01 15:45:37,742 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-01 15:45:37,743 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2070 ms
+2020-08-01 15:45:37,944 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-01 15:45:38,127 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-01 15:45:38,140 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:15432/sicred'
+2020-08-01 15:45:38,470 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Flyway Community Edition 6.4.4 by Redgate
+2020-08-01 15:45:38,487 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:15432/sicred (PostgreSQL 12.3)
+2020-08-01 15:45:38,517 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Successfully validated 3 migrations (execution time 00:00.015s)
+2020-08-01 15:45:38,524 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Current version of schema "public": 300720210000
+2020-08-01 15:45:38,525 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2020-08-01 15:45:38,602 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-01 15:45:38,648 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-01 15:45:38,695 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-01 15:45:38,935 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-01 15:45:39,068 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2020-08-01 15:45:39,602 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-08-01 15:45:39,609 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 15:45:39,723 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-01 15:45:39,732 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 15:45:40,024 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 15:45:41,005 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 15:45:41,006 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 15:45:41,010 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 15:45:41,010 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 15:45:43,302 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-08-01 15:45:43,361 INFO org.apache.kafka.common.config.AbstractConfig [restartedMain] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-01 15:45:43,428 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka version: 2.5.0
+2020-08-01 15:45:43,428 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka commitId: 66563e712b0b9f84
+2020-08-01 15:45:43,428 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka startTimeMs: 1596307543427
+2020-08-01 15:45:43,654 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-08-01 15:45:43,686 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-01 15:45:43,690 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 15:45:43,690 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 15:45:43,703 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ApiApplication in 9.384 seconds (JVM running for 9.984)
+2020-08-01 15:45:57,606 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-01 15:45:57,610 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-08-01 15:45:57,663 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 49 ms
+2020-08-01 15:46:42,820 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-2] M=handle NotFoundException status=404 message=this cpf not exists on brazilian receita federal
+2020-08-01 15:46:42,880 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [br.com.dbccompany.core.exception.UserNotFoundException: this cpf not exists on brazilian receita federal]
+2020-08-01 15:47:16,573 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-3] M=handleInternalError status=500 message=Read timed out executing GET https://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=70446478121&data=09/04/1997&token=93561250HZYxvoczWF168922000
+2020-08-01 15:47:16,576 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [feign.RetryableException: Read timed out executing GET https://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=70446478121&data=09/04/1997&token=93561250HZYxvoczWF168922000]
+2020-08-01 15:47:53,721 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-4] I=findByScheduleCodeAndCpf, uuid=8de44aec-d624-44d7-b14b-d342fc0bf14e, cpf=70446478121
+2020-08-01 15:47:53,967 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-4] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:47:53,968 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-4] I=init find schedule, code=8de44aec-d624-44d7-b14b-d342fc0bf14e
+2020-08-01 15:47:54,015 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-4] I=schedule has be found, schedule=ScheduleDto(code=8de44aec-d624-44d7-b14b-d342fc0bf14e, title=title, description=null, expiration=2020-07-31 23:53:17.145296)
+2020-08-01 15:47:54,049 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-4] M=handleBadRequest status=400 message=this schedule expired
+2020-08-01 15:47:54,052 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [br.com.dbccompany.core.exception.ScheduleExpiredException: this schedule expired]
+2020-08-01 15:48:25,181 INFO br.com.dbccompany.core.service.ScheduleCreateService [http-nio-8080-exec-7] I=saving a new, schedule=ScheduleDto(code=null, title=Teste, description=, expiration=null)
+2020-08-01 15:48:25,245 INFO br.com.dbccompany.core.service.ScheduleCreateService [http-nio-8080-exec-7] I=saved with success, schedule=ScheduleDto(code=767d49ae-74be-4af2-89d5-a603ebfd5f08, title=Teste, description=, expiration=null)
+2020-08-01 15:48:45,976 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-8] I=findByScheduleCodeAndCpf, uuid=767d49ae-74be-4af2-89d5-a603ebfd5f08, cpf=70446478121
+2020-08-01 15:48:45,999 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-8] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:48:46,002 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-8] I=init find schedule, code=767d49ae-74be-4af2-89d5-a603ebfd5f08
+2020-08-01 15:48:46,012 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-8] I=schedule has be found, schedule=ScheduleDto(code=767d49ae-74be-4af2-89d5-a603ebfd5f08, title=Teste, description=, expiration=null)
+2020-08-01 15:48:46,014 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-8] M=handleBadRequest status=400 message=this schedule not be open to voting
+2020-08-01 15:48:46,017 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-8] Resolved [br.com.dbccompany.core.exception.ScheduleNotOpenException: this schedule not be open to voting]
+2020-08-01 15:49:11,275 INFO br.com.dbccompany.core.service.ScheduleUpdateService [http-nio-8080-exec-10] I=updating expiration, code=767d49ae-74be-4af2-89d5-a603ebfd5f08, expiresTimeMinutes=60
+2020-08-01 15:49:15,193 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-10] I=init find schedule, code=767d49ae-74be-4af2-89d5-a603ebfd5f08
+2020-08-01 15:49:15,216 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-10] I=schedule has be found, schedule=ScheduleEntity(title=Teste, description=, datCreation=2020-08-01 15:48:25.239, datUpdate=2020-08-01 15:48:25.239, expiration=null)
+2020-08-01 15:49:16,473 INFO br.com.dbccompany.core.messaging.ScheduleFinishNotifyEnqueue [http-nio-8080-exec-10] I=send, message=767d49ae-74be-4af2-89d5-a603ebfd5f08, exchange=schedule-exchange, ttl=60
+2020-08-01 15:49:16,484 INFO org.springframework.amqp.rabbit.connection.AbstractConnectionFactory [http-nio-8080-exec-10] Attempting to connect to: [localhost:5672]
+2020-08-01 15:49:16,548 INFO org.springframework.amqp.rabbit.connection.AbstractConnectionFactory [http-nio-8080-exec-10] Created new connection: rabbitConnectionFactory#7d356a5:0/SimpleConnection@79f82440 [delegate=amqp://rabbitmq@127.0.0.1:5672/, localPort= 57558]
+2020-08-01 15:49:16,678 INFO br.com.dbccompany.core.messaging.ScheduleFinishNotifyEnqueue [http-nio-8080-exec-10] I=success send, message=767d49ae-74be-4af2-89d5-a603ebfd5f08, exchange=schedule-exchange, ttl=60
+2020-08-01 15:49:16,679 INFO br.com.dbccompany.core.service.ScheduleUpdateService [http-nio-8080-exec-10] I=saved with success, schedule=ScheduleDto(code=767d49ae-74be-4af2-89d5-a603ebfd5f08, title=Teste, description=, expiration=2020-08-01 16:49:16.439356)
+2020-08-01 15:49:22,785 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-1] I=findByScheduleCodeAndCpf, uuid=767d49ae-74be-4af2-89d5-a603ebfd5f08, cpf=70446478121
+2020-08-01 15:49:22,795 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-1] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:49:22,797 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-1] I=init find schedule, code=767d49ae-74be-4af2-89d5-a603ebfd5f08
+2020-08-01 15:49:22,809 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-1] I=schedule has be found, schedule=ScheduleDto(code=767d49ae-74be-4af2-89d5-a603ebfd5f08, title=Teste, description=, expiration=2020-08-01 16:49:16.439356)
+2020-08-01 15:49:22,812 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-1] I=saving a new, vote=VoteDto(code=null, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=NO, cpf=70446478121, datCreation=null, birthday=09/04/1997)
+2020-08-01 15:49:22,852 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-1] I=saved with success, vote=VoteDto(code=d78aafbb-f295-424b-a303-3996f80cfccd, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=NO, cpf=70446478121, datCreation=Sat Aug 01 15:49:22 BRT 2020, birthday=null)
+2020-08-01 15:49:38,370 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-2] I=findByScheduleCodeAndCpf, uuid=767d49ae-74be-4af2-89d5-a603ebfd5f08, cpf=86520466115
+2020-08-01 15:49:38,382 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-2] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:49:38,383 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-2] I=init find schedule, code=767d49ae-74be-4af2-89d5-a603ebfd5f08
+2020-08-01 15:49:38,388 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-2] I=schedule has be found, schedule=ScheduleDto(code=767d49ae-74be-4af2-89d5-a603ebfd5f08, title=Teste, description=, expiration=2020-08-01 16:49:16.439356)
+2020-08-01 15:49:38,390 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-2] I=saving a new, vote=VoteDto(code=null, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=NO, cpf=86520466115, datCreation=null, birthday=29/07/1979)
+2020-08-01 15:49:38,424 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-2] I=saved with success, vote=VoteDto(code=2995d411-47f3-49b4-8811-c8987a1c57e6, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=NO, cpf=86520466115, datCreation=Sat Aug 01 15:49:38 BRT 2020, birthday=null)
+2020-08-01 15:49:56,659 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-3] I=findByScheduleCodeAndCpf, uuid=767d49ae-74be-4af2-89d5-a603ebfd5f08, cpf=01415583501
+2020-08-01 15:49:56,666 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-3] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:49:56,667 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-3] I=init find schedule, code=767d49ae-74be-4af2-89d5-a603ebfd5f08
+2020-08-01 15:49:56,675 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-3] I=schedule has be found, schedule=ScheduleDto(code=767d49ae-74be-4af2-89d5-a603ebfd5f08, title=Teste, description=, expiration=2020-08-01 16:49:16.439356)
+2020-08-01 15:49:56,676 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-3] I=saving a new, vote=VoteDto(code=null, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=NO, cpf=01415583501, datCreation=null, birthday=11/06/1984)
+2020-08-01 15:49:56,695 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-3] I=saved with success, vote=VoteDto(code=78a75d82-e6d1-4335-ad81-25c351c29192, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=NO, cpf=01415583501, datCreation=Sat Aug 01 15:49:56 BRT 2020, birthday=null)
+2020-08-01 15:50:34,545 WARN br.com.dbccompany.api.app.RestResponseEntityExceptionHandler [http-nio-8080-exec-5] M=handleInternalError status=500 message=Read timed out executing GET https://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=22757066153&data=03/11/1960&token=93561250HZYxvoczWF168922000
+2020-08-01 15:50:34,550 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [feign.RetryableException: Read timed out executing GET https://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=22757066153&data=03/11/1960&token=93561250HZYxvoczWF168922000]
+2020-08-01 15:50:39,045 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-6] I=findByScheduleCodeAndCpf, uuid=767d49ae-74be-4af2-89d5-a603ebfd5f08, cpf=22757066153
+2020-08-01 15:50:39,049 INFO br.com.dbccompany.core.service.VoteFindService [http-nio-8080-exec-6] I=findByScheduleCodeAndCpf success, voteEntityOptional=Optional.empty
+2020-08-01 15:50:39,049 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-6] I=init find schedule, code=767d49ae-74be-4af2-89d5-a603ebfd5f08
+2020-08-01 15:50:39,053 INFO br.com.dbccompany.core.service.ScheduleFindService [http-nio-8080-exec-6] I=schedule has be found, schedule=ScheduleDto(code=767d49ae-74be-4af2-89d5-a603ebfd5f08, title=Teste, description=, expiration=2020-08-01 16:49:16.439356)
+2020-08-01 15:50:39,054 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-6] I=saving a new, vote=VoteDto(code=null, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=YES, cpf=22757066153, datCreation=null, birthday=03/11/1960)
+2020-08-01 15:50:39,066 INFO br.com.dbccompany.core.service.VoteCreateService [http-nio-8080-exec-6] I=saved with success, vote=VoteDto(code=64c3125b-309d-471b-99e6-a6ce7000f2d4, scheduleCode=767d49ae-74be-4af2-89d5-a603ebfd5f08, option=YES, cpf=22757066153, datCreation=Sat Aug 01 15:50:39 BRT 2020, birthday=null)
+2020-08-01 16:03:59,556 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-01 16:03:59,778 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-01 16:04:00,597 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 16:04:00,597 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-01 16:04:00,620 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.ScheduleRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 16:04:00,622 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.VoteRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 16:04:00,625 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 25ms. Found 0 JDBC repository interfaces.
+2020-08-01 16:04:00,631 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 16:04:00,631 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-01 16:04:00,656 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 22ms. Found 2 JPA repository interfaces.
+2020-08-01 16:04:00,877 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=e7ccec4d-1aab-3eaa-834f-a9025553d884
+2020-08-01 16:04:00,908 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'br.com.dbccompany.core.integration.client.HubDevClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-01 16:04:01,448 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-01 16:04:01,457 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-01 16:04:01,457 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-01 16:04:01,458 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-01 16:04:01,529 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-01 16:04:01,529 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1739 ms
+2020-08-01 16:04:01,698 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-01 16:04:01,745 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-01 16:04:01,791 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:15432/sicred'
+2020-08-01 16:04:01,982 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Flyway Community Edition 6.4.4 by Redgate
+2020-08-01 16:04:01,993 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:15432/sicred (PostgreSQL 12.3)
+2020-08-01 16:04:02,015 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Successfully validated 3 migrations (execution time 00:00.012s)
+2020-08-01 16:04:02,019 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Current version of schema "public": 300720210000
+2020-08-01 16:04:02,020 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2020-08-01 16:04:02,108 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-01 16:04:02,146 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-01 16:04:02,181 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-01 16:04:02,291 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-01 16:04:02,370 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2020-08-01 16:04:02,729 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-08-01 16:04:02,734 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 16:04:02,819 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-01 16:04:02,825 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 16:04:03,016 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 16:04:03,289 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 16:04:03,289 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 16:04:03,292 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 16:04:03,292 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 16:04:04,761 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-08-01 16:04:04,810 INFO org.apache.kafka.common.config.AbstractConfig [restartedMain] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-01 16:04:04,871 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka version: 2.5.0
+2020-08-01 16:04:04,872 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka commitId: 66563e712b0b9f84
+2020-08-01 16:04:04,872 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka startTimeMs: 1596308644870
+2020-08-01 16:04:05,031 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-08-01 16:04:05,043 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-01 16:04:05,050 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 16:04:05,051 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 16:04:05,067 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ApiApplication in 5.947 seconds (JVM running for 6.45)
+2020-08-01 16:04:13,052 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-01 16:04:13,052 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-08-01 16:04:13,071 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 18 ms
+2020-08-01 16:04:13,209 INFO br.com.dbccompany.core.service.ScheduleCreateService [http-nio-8080-exec-2] I=saving a new, schedule=ScheduleDto(code=null, title=Teste, description=, expiration=null)
+2020-08-01 16:04:13,309 INFO br.com.dbccompany.core.service.ScheduleCreateService [http-nio-8080-exec-2] I=saved with success, schedule=ScheduleDto(code=de16be40-2573-4b7d-b841-f04069c3de15, title=Teste, description=, expiration=null)
+2020-08-01 16:22:28,430 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 16:22:28,435 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-01 16:22:28,437 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-01 16:22:28,453 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-01 16:22:42,360 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-01 16:22:42,595 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-01 16:22:43,654 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 16:22:43,655 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-01 16:22:43,690 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.ScheduleRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 16:22:43,692 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.VoteRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 16:22:43,697 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 38ms. Found 0 JDBC repository interfaces.
+2020-08-01 16:22:43,706 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 16:22:43,707 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-01 16:22:43,768 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 58ms. Found 2 JPA repository interfaces.
+2020-08-01 16:22:44,129 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=e7ccec4d-1aab-3eaa-834f-a9025553d884
+2020-08-01 16:22:44,188 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'br.com.dbccompany.core.integration.client.HubDevClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-01 16:22:45,274 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-01 16:22:45,286 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-01 16:22:45,287 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-01 16:22:45,287 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-01 16:22:45,444 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-01 16:22:45,445 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2839 ms
+2020-08-01 16:22:45,780 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-01 16:22:45,854 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-01 16:22:45,915 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:15432/sicred'
+2020-08-01 16:22:46,398 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Flyway Community Edition 6.4.4 by Redgate
+2020-08-01 16:22:46,419 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:15432/sicred (PostgreSQL 12.3)
+2020-08-01 16:22:46,475 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Successfully validated 3 migrations (execution time 00:00.036s)
+2020-08-01 16:22:46,485 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Current version of schema "public": 300720210000
+2020-08-01 16:22:46,488 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2020-08-01 16:22:46,644 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-01 16:22:46,795 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-01 16:22:46,885 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-01 16:22:47,116 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-01 16:22:47,253 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2020-08-01 16:22:48,097 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-08-01 16:22:48,109 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 16:22:48,112 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-01 16:22:48,126 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 16:22:48,585 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 16:22:49,118 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 16:22:49,119 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 16:22:49,124 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 16:22:49,124 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 16:22:52,277 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-08-01 16:22:52,364 INFO org.apache.kafka.common.config.AbstractConfig [restartedMain] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-01 16:22:52,559 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka version: 2.5.0
+2020-08-01 16:22:52,560 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka commitId: 66563e712b0b9f84
+2020-08-01 16:22:52,560 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka startTimeMs: 1596309772557
+2020-08-01 16:22:52,895 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-08-01 16:22:52,959 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-01 16:22:52,964 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 16:22:52,964 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 16:22:52,998 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ApiApplication in 11.201 seconds (JVM running for 11.795)
+2020-08-01 16:26:23,301 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 16:26:23,307 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-01 16:26:23,315 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-01 16:26:23,357 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-01 16:48:56,835 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-01 16:48:57,084 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-01 16:48:57,873 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 16:48:57,873 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-01 16:48:57,899 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.ScheduleRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 16:48:57,901 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data JDBC - Could not safely identify store assignment for repository candidate interface br.com.dbccompany.core.repository.VoteRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-08-01 16:48:57,909 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 32ms. Found 0 JDBC repository interfaces.
+2020-08-01 16:48:57,916 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-01 16:48:57,917 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-01 16:48:57,957 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 35ms. Found 2 JPA repository interfaces.
+2020-08-01 16:48:58,202 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=e7ccec4d-1aab-3eaa-834f-a9025553d884
+2020-08-01 16:48:58,249 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'br.com.dbccompany.core.integration.client.HubDevClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-01 16:48:58,843 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-01 16:48:58,849 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-01 16:48:58,850 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-01 16:48:58,850 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-01 16:48:58,917 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-01 16:48:58,917 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1822 ms
+2020-08-01 16:48:59,108 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-01 16:48:59,163 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-01 16:48:59,195 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:15432/sicred'
+2020-08-01 16:48:59,392 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Flyway Community Edition 6.4.4 by Redgate
+2020-08-01 16:48:59,403 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Database: jdbc:postgresql://localhost:15432/sicred (PostgreSQL 12.3)
+2020-08-01 16:48:59,442 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Successfully validated 3 migrations (execution time 00:00.023s)
+2020-08-01 16:48:59,447 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Current version of schema "public": 300720210000
+2020-08-01 16:48:59,447 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [restartedMain] Schema "public" is up to date. No migration necessary.
+2020-08-01 16:48:59,559 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-01 16:48:59,623 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-01 16:48:59,684 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-01 16:48:59,860 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-01 16:49:00,029 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2020-08-01 16:49:00,547 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-08-01 16:49:00,552 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 16:49:00,643 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-01 16:49:00,648 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-01 16:49:00,826 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 16:49:01,182 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 16:49:01,183 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 16:49:01,187 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2020-08-01 16:49:01,187 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-01 16:49:02,668 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-08-01 16:49:02,715 INFO org.apache.kafka.common.config.AbstractConfig [restartedMain] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-01 16:49:02,765 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka version: 2.5.0
+2020-08-01 16:49:02,765 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka commitId: 66563e712b0b9f84
+2020-08-01 16:49:02,765 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [restartedMain] Kafka startTimeMs: 1596311342764
+2020-08-01 16:49:02,965 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-08-01 16:49:03,013 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-01 16:49:03,019 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-01 16:49:03,019 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-01 16:49:03,034 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ApiApplication in 6.615 seconds (JVM running for 7.252)

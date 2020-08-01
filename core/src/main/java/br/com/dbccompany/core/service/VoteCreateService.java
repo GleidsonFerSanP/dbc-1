@@ -4,18 +4,16 @@ import br.com.dbccompany.core.domain.dto.VoteDto;
 import br.com.dbccompany.core.domain.entity.VoteEntity;
 import br.com.dbccompany.core.exception.ScheduleExpiredException;
 import br.com.dbccompany.core.exception.ScheduleNotOpenException;
+import br.com.dbccompany.core.exception.UserNotFoundException;
 import br.com.dbccompany.core.exception.VoteAlreadyExistsException;
 import br.com.dbccompany.core.mapper.VoteMapper;
 import br.com.dbccompany.core.repository.VoteRepository;
 import br.com.dbccompany.core.utils.DateUtils;
-import br.com.dbccompany.core.utils.TimeMachine;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
 import java.util.Optional;
 
 import static br.com.dbccompany.core.utils.TimeMachine.now;
@@ -25,6 +23,8 @@ import static java.util.Objects.isNull;
 @RequiredArgsConstructor
 @Slf4j
 public class VoteCreateService {
+
+    private final CpfFindService cpfFindService;
 
     private final VoteRepository voteRepository;
 
@@ -46,6 +46,13 @@ public class VoteCreateService {
     }
 
     private void validate(VoteDto voteDto) {
+
+        var cpfExists = cpfFindService.exists(voteDto.getCpf(), voteDto.getBirthday());
+
+        if(!cpfExists){
+            throw new UserNotFoundException("this cpf not exists on brazilian receita federal");
+        }
+
         final Optional<VoteEntity> optionalVoteEntity = voteFindService
                 .findByScheduleCodeAndCpf(voteDto.getScheduleCode(), voteDto.getCpf());
 

@@ -338,7 +338,7 @@ public class VoteTest extends IntegrationBaseTest {
 
         var request = VoteRequest.builder()
                 .scheduleCode("8de44aec-d624-44d7-b14b-d342fc0bf147")
-                .cpf("26829510074")
+                .cpf("86520466115")
                 .option("Sim")
                 .build();
 

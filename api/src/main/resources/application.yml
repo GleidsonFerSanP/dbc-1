@@ -27,3 +27,23 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
+
+feign:
+  client:
+    devhub:
+      cpf:
+        uri: https://ws.hubdodesenvolvedor.com.br/v2/cpf/?token=93561250HZYxvoczWF168922000
+    config:
+      default:
+        connectTimeout: 15000
+        readTimeout: 15000
+        loggerLevel: basic
+  hystrix:
+    enabled: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE

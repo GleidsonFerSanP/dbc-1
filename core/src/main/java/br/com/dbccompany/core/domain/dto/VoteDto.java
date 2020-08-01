@@ -18,4 +18,6 @@ public class VoteDto {
     private String cpf;
 
     private Date datCreation;
+
+    private String birthday;
 }

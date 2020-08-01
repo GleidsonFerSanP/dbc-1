@@ -2,7 +2,14 @@ package br.com.dbccompany.api.app;
 
 import br.com.dbccompany.api.resource.response.v1.ExceptionResponse;
 import br.com.dbccompany.api.resource.response.v1.ExceptionResponseList;
-import br.com.dbccompany.core.exception.*;
+import br.com.dbccompany.core.exception.InvalidCodeException;
+import br.com.dbccompany.core.exception.InvalidExpirationTimeException;
+import br.com.dbccompany.core.exception.NotFoundException;
+import br.com.dbccompany.core.exception.OptionVoteInvalidException;
+import br.com.dbccompany.core.exception.ScheduleExpiredException;
+import br.com.dbccompany.core.exception.ScheduleNotOpenException;
+import br.com.dbccompany.core.exception.UserNotFoundException;
+import br.com.dbccompany.core.exception.VoteAlreadyExistsException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -36,9 +43,9 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         return new ExceptionResponseList(errors);
     }
 
-    @ExceptionHandler(NotFoundException.class)
+    @ExceptionHandler({ NotFoundException.class, UserNotFoundException.class })
     @ResponseStatus(NOT_FOUND)
-    public ExceptionResponse handle(final NotFoundException e, final WebRequest request) {
+    public ExceptionResponse handle(final RuntimeException e, final WebRequest request) {
         final HttpStatus httpStatus = NOT_FOUND;
         logException("handle NotFoundException", httpStatus, e);
         return  buildResponseError(e, httpStatus, request);

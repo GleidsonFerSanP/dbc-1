@@ -22,6 +22,9 @@ public class VoteRequest {
     @UUID
     private String scheduleCode;
 
+    //@NotBlank(message = "this field cannot be empty, format DD/MM/YYYY")
+    private String birthday;
+
     @NotBlank(message = "option is required [Sim, Nao]")
     @Size(max = 3, min = 3, message = "this field size required 3 characters [Sim, Nao]")
     @VoteOption(message = "options valids are [Sim, Nao]")

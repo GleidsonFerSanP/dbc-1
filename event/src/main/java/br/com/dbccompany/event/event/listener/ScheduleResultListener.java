@@ -13,5 +13,7 @@ public class ScheduleResultListener {
     @KafkaListener(topics = SCHEDULE_RESULT_TOPIC)
     public void receive(final String message) {
         log.info("I=consuming event, TAG=SCHEDULE_RESULT_TOPIC message={}", message);
+
+
     }
 }

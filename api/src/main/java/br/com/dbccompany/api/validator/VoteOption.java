@@ -1,8 +1,8 @@
 package br.com.dbccompany.api.validator;
 
-import org.springframework.messaging.handler.annotation.Payload;
 
 import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented

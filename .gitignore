@@ -8,6 +8,7 @@
 /core/gradle/
 /api/gradle/
 /logs/
+*/spring-boot-logger.log
 /event/.gradle/
 /event/build/
 /event/gradle/

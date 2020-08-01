@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbc-api
+  labels:
+    app: dbc-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbc-api
+  template:
+    metadata:
+      labels:
+        app: dbc-api
+    spec:
+      containers:
+        - name: 'dbc-api'
+          image: 'gleidsonfersanp/dbc-api:latest'
+          imagePullPolicy: IfNotPresent
+          args: ["export spring_profiles_active=prod"]
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+            - name: JAVA_OPTIONS
+              value: -Dspring.profiles.active=prod
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: dbc-api-config-map
+                  key: ENVIRONMENT
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: dbc-api-config-map
+                  key: postgres_url
+            - name: DB_USER
+              value: doadmin
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dbc-postgres-secret
+                  key: password
+            - name: HUB_DEV_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: dbc-hub-dev-secret
+                  key: password
+            - name: RABBIT_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: dbc-api-config-map
+                  key: rabbit_url
+            - name: RABBIT_USER
+              value: user
+            - name: RABBIT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dbc-rabbit-secret
+                  key: password
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 40
+            timeoutSeconds: 2
+            periodSeconds: 3
+            failureThreshold: 2
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 100
+            timeoutSeconds: 2
+            periodSeconds: 8
+            failureThreshold: 1

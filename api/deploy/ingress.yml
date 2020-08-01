@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress-dbc-api
+  namespace: prod
+spec:
+  rules:
+    - host: dbc.avaliacao.com.br
+      http:
+        paths:
+          - backend:
+              serviceName: dbc-api
+              servicePort: 8080

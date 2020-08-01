@@ -27,3 +27,13 @@ Para o cliente **Sicred**.
 ---
 ### Documentação
 Documentação dos endpoints do serviço estão disponíveis no endereço `http://localhost:8080/swagger-ui.html`
+
+
+username = doadmin
+password = lf5yk1omixxqc3v5
+host = db-postgresql-nyc1-17353-do-user-7647301-0.a.db.ondigitalocean.com
+port = 25060
+database = defaultdb
+sslmode = require
+
+PGPASSWORD=lf5yk1omixxqc3v5 pg_restore -U doadmin -h db-postgresql-nyc1-17353-do-user-7647301-0.a.db.ondigitalocean.com -p 25060 -d defaultdb 

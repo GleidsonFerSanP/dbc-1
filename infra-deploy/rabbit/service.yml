@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dbc-rabbit-service
+spec:
+  type: ClusterIP
+  selector:
+    app: dbc-rabbit
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5672

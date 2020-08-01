@@ -1,4 +1,4 @@
-package br.com.dbccompany.core.config;
+package br.com.dbccompany.event.event.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;

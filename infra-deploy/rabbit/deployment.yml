@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbc-rabbit
+  labels:
+    app: dbc-rabbit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbc-rabbit
+  template:
+    metadata:
+      labels:
+        app: dbc-rabbit
+    spec:
+      containers:
+        - name: 'dbc-rabbit'
+          image: 'rabbitmq:3-management'
+          imagePullPolicy: IfNotPresent

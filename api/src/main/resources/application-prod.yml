@@ -1,1 +1,50 @@
 
+spring:
+  rabbitmq:
+    host: ${RABBIT_HOST}
+    port: 5672
+    password: ${RABBIT_USER}
+    username: ${RABBIT_PASSWORD}
+  application:
+    name: sicred-api
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://${DB_HOST}:25060/sicred
+    platform: postgres
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+    locations: classpath:db/migration
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    openInView: false
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+
+feign:
+  client:
+    devhub:
+      cpf:
+        uri: https://ws.hubdodesenvolvedor.com.br/v2/cpf/?token=${HUB_DEV_TOKEN}
+    config:
+      default:
+        connectTimeout: 15000
+        readTimeout: 15000
+        loggerLevel: basic
+  hystrix:
+    enabled: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dbc-api-config-map
+data:
+  postgres_url: "postgres"
+  rabbit_url: "dbc-rabbit-rabbitmq"
+  ENVIRONMENT: prod

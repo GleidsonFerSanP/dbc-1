@@ -1,4 +1,4 @@
-package br.com.dbccompany.messaging.config;
+package br.com.dbccompany.core.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
@@ -8,10 +8,10 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaConfig {
 
-    private static final String TOPIC_SCHEDULE_CREATED = "schedule.created";
+    private static final String TOPIC_SCHEDULE_CREATED = "schedule.result";
 
     @Bean
-    public NewTopic topicExample() {
+    public NewTopic sheduleResultTopic() {
         return TopicBuilder.name(TOPIC_SCHEDULE_CREATED)
                 .partitions(3)
                 .replicas(1)

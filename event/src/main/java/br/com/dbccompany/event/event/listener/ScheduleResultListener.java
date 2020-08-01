@@ -1,11 +1,11 @@
 package br.com.dbccompany.event.event.listener;
 
-import br.com.dbccompany.messaging.annotation.Listener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
 
 @Slf4j
-@Listener
+@Component
 public class ScheduleResultListener {
 
     private static final String SCHEDULE_RESULT_TOPIC = "schedule.result";

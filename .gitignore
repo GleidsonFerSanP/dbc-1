@@ -8,3 +8,10 @@
 /core/gradle/
 /api/gradle/
 /logs/
+/event/.gradle/
+/event/build/
+/event/gradle/
+/messaging/.gradle/
+/messaging/build/
+/messaging/gradle/
+/messaging/logs/

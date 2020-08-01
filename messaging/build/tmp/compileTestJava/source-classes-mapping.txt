@@ -1,2 +1,0 @@
-br/com/dbccompany/messaging/MessagingApplicationTests.java
- br.com.dbccompany.messaging.MessagingApplicationTests

@@ -22,3 +22,9 @@ logging:
   level:
     root: INFO
     flyway: TRACE
+
+feign:
+  client:
+    devhub:
+      cpf:
+        uri: http://localhost:${wiremock.server.port}/?token=93561250HZYxvoczWF168922000

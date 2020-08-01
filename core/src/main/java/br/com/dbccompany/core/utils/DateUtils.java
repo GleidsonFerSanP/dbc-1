@@ -1,5 +1,10 @@
 package br.com.dbccompany.core.utils;
 
+import lombok.NonNull;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -18,6 +23,11 @@ public abstract class DateUtils {
 
     public static Date toDate(final LocalDateTime dateToConvert) {
         return java.sql.Timestamp.valueOf(dateToConvert);
+    }
+
+    public static Date textToDate(@NonNull final String dateString, final String pattern) throws ParseException {
+        final DateFormat dateFormat = new SimpleDateFormat(pattern);
+        return dateFormat.parse(dateString);
     }
 
     public static void mockCalendar(final Integer dayOfMonth, final Integer hour) {

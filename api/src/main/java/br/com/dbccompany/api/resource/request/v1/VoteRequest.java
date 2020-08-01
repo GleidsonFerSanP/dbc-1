@@ -1,13 +1,16 @@
 package br.com.dbccompany.api.resource.request.v1;
 
+import br.com.dbccompany.api.validator.DatePattern;
 import br.com.dbccompany.api.validator.UUID;
 import br.com.dbccompany.api.validator.VoteOption;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Data
 @Builder
@@ -22,7 +25,8 @@ public class VoteRequest {
     @UUID
     private String scheduleCode;
 
-    //@NotBlank(message = "this field cannot be empty, format DD/MM/YYYY")
+    @NotBlank(message = "this field cannot be empty, format DD/MM/YYYY")
+    @DatePattern(message = "this field accept format date DD/MM/YYYY", pattern = "dd/MM/yyyy")
     private String birthday;
 
     @NotBlank(message = "option is required [Sim, Nao]")

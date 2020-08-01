@@ -86,6 +86,7 @@ public class VoteTest extends IntegrationBaseTest {
         var scheduleCode = "8de44aec-d624-44d7-b14b-d342fc012347";
         var request = VoteRequest.builder()
                 .scheduleCode(scheduleCode)
+                .birthday("29/07/1979")
                 .cpf("26829510074")
                 .option("Sim")
                 .build();
@@ -115,6 +116,7 @@ public class VoteTest extends IntegrationBaseTest {
         var request = VoteRequest.builder()
                 .scheduleCode(scheduleCode)
                 .cpf("26829510074")
+                .birthday("29/07/1979")
                 .option("Sim")
                 .build();
 
@@ -143,6 +145,7 @@ public class VoteTest extends IntegrationBaseTest {
         var request = VoteRequest.builder()
                 .scheduleCode(scheduleCode)
                 .cpf("26829510074")
+                .birthday("29/07/1979")
                 .option("Sim")
                 .build();
 
@@ -192,12 +195,72 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
+    @DisplayName("falha ao criar uma voto com um cpf maior q 11 caracteres")
+    public void createVotesValidateCpfSizeGreaterElevenCharsFail() {
+
+        var request = VoteRequest.builder()
+                .cpf("002.533.610-01")
+                .option("Sim")
+                .birthday("29/07/1979")
+                .scheduleCode(TestUtils.randomUUID())
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body(containsString("this field size required 11 characters [cpf]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar uma voto com um cpf menor que 11 caracteres")
+    public void createVotesValidateCpfSizeSmallerElevenCharsFail() {
+
+        var request = VoteRequest.builder()
+                .cpf("0023301")
+                .option("Sim")
+                .birthday("29/07/1979")
+                .scheduleCode(TestUtils.randomUUID())
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body(containsString("this field size required 11 characters [cpf]"))
+                .body(containsString("invalid Brazilian individual taxpayer registry number (CPF) [cpf]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
     @DisplayName("falha ao criar uma voto sem um CPF")
     public void createVotesValidateWithoutCpfFail() {
 
         var request = VoteRequest.builder()
                 .scheduleCode(TestUtils.randomUUID())
                 .option("Nao")
+                .birthday("29/07/1979")
                 .build();
 
         RestAssuredMockMvc.given()
@@ -219,6 +282,64 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
+    @DisplayName("falha ao criar uma voto sem uma data de nascimento")
+    public void createVotesValidateWithoutBirthdayFail() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode(TestUtils.randomUUID())
+                .option("Nao")
+                .cpf("55213866026")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body(containsString("this field accept format date DD/MM/YYYY [birthday]"))
+                .body(containsString("this field cannot be empty, format DD/MM/YYYY [birthday]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
+    @DisplayName("falha ao criar uma voto com uma data de nascimento no formato diferente do exigido")
+    public void createVotesValidateWithBirthdayInvalidPatternFormatFail() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode(TestUtils.randomUUID())
+                .option("Nao")
+                .birthday("29-07-1979")
+                .cpf("55213866026")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .body(notNullValue())
+                .body("errors", notNullValue())
+                .body(containsString("this field accept format date DD/MM/YYYY [birthday]"))
+                .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
+                .body("errors[0].error", equalTo("ConstraintViolationException"))
+        ;
+    }
+
+    @Test
     @DisplayName("falha ao criar uma voto sem um CPF válido")
     public void createVotesValidateCpfFail() {
 
@@ -226,6 +347,7 @@ public class VoteTest extends IntegrationBaseTest {
                 .scheduleCode(TestUtils.randomUUID())
                 .cpf("12365478912")
                 .option("Nao")
+                .birthday("29/07/1979")
                 .build();
 
         RestAssuredMockMvc.given()
@@ -253,6 +375,7 @@ public class VoteTest extends IntegrationBaseTest {
         var request = VoteRequest.builder()
                 .scheduleCode(TestUtils.randomText(5))
                 .cpf("00253361001")
+                .birthday("29/07/1979")
                 .option("Nao")
                 .build();
 
@@ -275,12 +398,41 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
+    @DisplayName("falha ao criar um voto para um cpf válido mas não encontrado na receita federal")
+    public void createVotesCpfNotFoundOnReceitaFederalFail() {
+
+        var request = VoteRequest.builder()
+                .scheduleCode(TestUtils.randomUUID())
+                .cpf("13772988091")
+                .birthday("29/07/1979")
+                .option("Nao")
+                .build();
+
+        RestAssuredMockMvc.given()
+                .webAppContextSetup(webApplicationContext)
+                .contentType(V1MediaType.APPLICATION_VND_SICRED_APP_V_1_JSON)
+                .body(request)
+                .when()
+                .post(BASE_URL)
+                .then()
+                .log().body().and()
+                .assertThat()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .body(notNullValue())
+                .body("message", equalTo("this cpf not exists on brazilian receita federal"))
+                .body("httpStatus", equalTo(HttpStatus.NOT_FOUND.value()))
+                .body("error", equalTo("UserNotFoundException"))
+        ;
+    }
+
+    @Test
     @DisplayName("falha ao criar um voto com uma opção de voto inválido")
     public void createVoteInvalidOptionFail() {
 
         var request = VoteRequest.builder()
                 .scheduleCode(TestUtils.randomUUID())
                 .cpf("00253361001")
+                .birthday("29/07/1979")
                 .option("AAA")
                 .build();
 
@@ -308,7 +460,8 @@ public class VoteTest extends IntegrationBaseTest {
     public void ifThereAreAlreadyVotesOfThisCfpForThisSchedulePreviouslyFails() {
         var request = VoteRequest.builder()
                 .scheduleCode("8de44aec-d624-44d7-b14b-d342fc0bf142")
-                .cpf("00253361001")
+                .cpf("26829510074")
+                .birthday("29/07/1979")
                 .option("Sim")
                 .build();
 
@@ -338,7 +491,8 @@ public class VoteTest extends IntegrationBaseTest {
 
         var request = VoteRequest.builder()
                 .scheduleCode("8de44aec-d624-44d7-b14b-d342fc0bf147")
-                .cpf("86520466115")
+                .cpf("26829510074")
+                .birthday("29/07/1979")
                 .option("Sim")
                 .build();
 

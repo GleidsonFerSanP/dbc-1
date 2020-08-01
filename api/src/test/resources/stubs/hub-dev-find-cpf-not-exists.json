@@ -1,0 +1,13 @@
+{
+  "request": {
+    "url": "/?cpf=13772988091&data=29/07/1979&token=93561250HZYxvoczWF168922000",
+    "method" : "GET"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{ \"status\": false }"
+  }
+}

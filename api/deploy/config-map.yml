@@ -4,5 +4,5 @@ metadata:
   name: dbc-api-config-map
 data:
   postgres_url: "postgres"
-  rabbit_url: "dbc-rabbit-rabbitmq"
+  rabbit_url: "rabbit-rabbitmq.prod.svc.cluster.local"
   ENVIRONMENT: prod

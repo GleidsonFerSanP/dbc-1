@@ -6,7 +6,7 @@ Para o cliente **Sicred**.
 - Lombok
     1) Instalar o [Plugin do Lombok](https://projectlombok.org/).
     2) Habilitar processamento de anotações: Build, Execution, Deployment -> Compiler -> Annotation Processors (Enable Annotation Processing).
-### Dependências para rodar a aplicação em Docker
+### Dependências Docker
 - Docker
     1) Instalar o [Docker](https://docs.docker.com/get-docker/).
     2) Instalar o [docker-compose](https://docs.docker.com/compose/install/).

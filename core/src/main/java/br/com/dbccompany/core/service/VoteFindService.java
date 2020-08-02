@@ -40,8 +40,4 @@ public class VoteFindService {
         log.info("I=findByScheduleCode success, size={}", voteDtoList.size());
         return voteDtoList;
     }
-
-    public Set<VoteResultDto> findByScheduleCodeGroupByOption(final String scheduleCode) {
-        return voteRepository.findByScheduleGroupByOption(scheduleCode);
-    }
 }

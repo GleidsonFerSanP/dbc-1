@@ -8,6 +8,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface ScheduleRepository extends JpaRepository<ScheduleEntity, UUID> {
+public interface ScheduleRepository extends JpaRepository<ScheduleEntity, UUID>, ScheduleRepositoryCustom {
     Optional<ScheduleEntity> findByCode(final UUID code);
 }

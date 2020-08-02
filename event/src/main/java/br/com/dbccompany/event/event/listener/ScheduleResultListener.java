@@ -1,5 +1,6 @@
 package br.com.dbccompany.event.event.listener;
 
+import br.com.dbccompany.core.domain.message.ScheduleResultMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -11,9 +12,7 @@ public class ScheduleResultListener {
     private static final String SCHEDULE_RESULT_TOPIC = "schedule.result";
 
     @KafkaListener(topics = SCHEDULE_RESULT_TOPIC)
-    public void receive(final String message) {
+    public void receive(final ScheduleResultMessage message) {
         log.info("I=consuming event, TAG=SCHEDULE_RESULT_TOPIC message={}", message);
-
-
     }
 }

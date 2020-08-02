@@ -1,15 +1,9 @@
 spring:
     kafka:
-      consumer:
-          bootstrap-servers: localhost:9092
-          group-id: sicred-messaging
-          auto-offset-reset: earliest
-          key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-          value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       producer:
           bootstrap-servers: localhost:9092
           key-serializer: org.apache.kafka.common.serialization.StringSerializer
-          value-serializer: org.apache.kafka.common.serialization.StringSerializer
+          value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     rabbitmq:
         host: localhost
         port: 5672
@@ -38,3 +32,23 @@ spring:
             hibernate:
                 temp:
                     use_jdbc_metadata_defaults: false
+
+feign:
+    client:
+        devhub:
+            cpf:
+                uri: https://ws.hubdodesenvolvedor.com.br/v2/cpf/?token=93561250HZYxvoczWF168922000
+        config:
+            default:
+                connectTimeout: 15000
+                readTimeout: 15000
+                loggerLevel: basic
+    hystrix:
+        enabled: false
+
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    strategy: SEMAPHORE

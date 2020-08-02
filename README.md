@@ -24,6 +24,7 @@ Para o cliente **Sicred**.
 ---
 ### Integrações
 - [HUBDEV](https://www.hubdodesenvolvedor.com.br/ "HUBDEV") - Consulta de CPF
+    - necessário a data de nascimento para a consulta dos dados de CPF
 ---
 ### Documentação
 Documentação dos endpoints do serviço estão disponíveis no endereço `http://localhost:8080/swagger-ui.html`

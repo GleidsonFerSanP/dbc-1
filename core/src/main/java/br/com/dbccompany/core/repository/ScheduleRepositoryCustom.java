@@ -1,21 +1,22 @@
 package br.com.dbccompany.core.repository;
 
+import br.com.dbccompany.core.domain.dto.ScheduleResultDto;
 import br.com.dbccompany.core.domain.dto.VoteResultDto;
 
 import java.util.Set;
 
-public interface VoteRepositoryCustom {
+public interface ScheduleRepositoryCustom {
 
     String queryVotesResultByScheduleCode = "select " +
-            "    s.title as scheduleTitle, " +
-            "    s.description as scheduleDescription, " +
+            "    s.title, " +
+            "    s.description, " +
             "    v.option, " +
             "    count(v.option) as quantity " +
             " from vote as v " +
             " right join schedule s on s.code = v.code_schedule " +
             " where s.code = :scheduleCode " +
-            " group by option, scheduleTitle, scheduleDescription ";
+            " group by s.code, option, title, description ";
 
-    Set<VoteResultDto> findByScheduleGroupByOption(final String scheduleCode);
+    ScheduleResultDto findScheduleResults(final String scheduleCode);
 
 }

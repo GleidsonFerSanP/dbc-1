@@ -8,8 +8,12 @@ public class ExpirationMessagePostProcessor implements MessagePostProcessor {
 
     private final Long ttl;
 
-    public ExpirationMessagePostProcessor(Long ttl) {
-        this.ttl = ttl;
+    public ExpirationMessagePostProcessor(Integer timeInMinutes) {
+        this.ttl = convertMinutesInMilliseconds(timeInMinutes);
+    }
+
+    private Long convertMinutesInMilliseconds(final Integer ttl) {
+        return (long) (60000 * ttl);
     }
 
     @Override

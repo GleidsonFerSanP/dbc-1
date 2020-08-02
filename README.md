@@ -22,7 +22,7 @@ Para o cliente **Sicred**.
 ---
 ### Integrações
 - [HUBDEV](https://www.hubdodesenvolvedor.com.br/ "HUBDEV") - Consulta de CPF
-    - necessário a data de nascimento para a consulta dos dados de CPF
+    - necessário a data de nascimento para a consulta dos dados de CPF na receita federal
 ---
 ### Start do projeto e observações sobre as tecnologias utilizadas
 - O projeto está dividido em uma arquitetura de 4 módulos como as seguintes definições:

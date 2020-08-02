@@ -4,6 +4,7 @@ import br.com.dbccompany.api.mapper.ScheduleAPIMapper;
 import br.com.dbccompany.api.resource.request.v1.ExpiresTimeRequest;
 import br.com.dbccompany.api.resource.request.v1.ScheduleRequest;
 import br.com.dbccompany.api.resource.response.v1.ScheduleResponse;
+import br.com.dbccompany.api.resource.response.v1.ScheduleResultsResponse;
 import br.com.dbccompany.api.validator.UUID;
 import br.com.dbccompany.core.domain.dto.ScheduleDto;
 import br.com.dbccompany.core.service.ScheduleCreateService;
@@ -80,7 +81,7 @@ public class ScheduleResource {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @Operation(summary = "Update a Schedule")
+    @Operation(summary = "Update a Schedule to open a schedule voting or to update expiration to voting")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "success update a Schedule to open a voting",
                     content = { @Content(mediaType = APPLICATION_VND_SICRED_APP_V_1_JSON,
@@ -109,6 +110,19 @@ public class ScheduleResource {
         var response = bindResponseWithHateoasLink(scheduleDto);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @Operation(summary = "List results to a Schedule")
+    @ApiResponses(value = { @ApiResponse(responseCode = "404", description = "not found", content = @Content)})
+    @GetMapping(value = "/{code}/results", produces = APPLICATION_VND_SICRED_APP_V_1_JSON)
+    @ResponseStatus(HttpStatus.OK)
+    public ScheduleResultsResponse findResults(@UUID @PathVariable final String code) {
+
+        var scheduleDto = scheduleFindService.findResultsByCode(code);
+
+        var response = scheduleAPIMapper.toResultsResponse(scheduleDto);
+
+        return response;
     }
 
     @Operation(summary = "find all Schedules")

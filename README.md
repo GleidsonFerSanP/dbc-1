@@ -12,7 +12,7 @@ Para o cliente **Sicred**.
     2) Instalar o [docker-compose](https://docs.docker.com/compose/install/).
 ---
 ### Para acessar o banco de dados localmente
-- PGAdmin
+- Após rodar o comando `docker-compose up -d` para acessar o **PGAdmin**
     1) No browser acessar o [PGAdmin](http://localhost:16543).
     2) Configurar um novo server utilizando os dados de acesso
      - host: `local-postgres`.

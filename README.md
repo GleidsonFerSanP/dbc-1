@@ -39,7 +39,7 @@ Para o cliente **Sicred**.
     da pauta (ScheduleEntity) e enviada para uma fila usada como espera, a mesma não possui consumidores, assim quando
      o tempo é expirado a mensagem é redirecionada e consumida por outra que possui a lógica de consultar no banco os 
      resultados e em seguida postar outra mensagem já com os resultados computados para o kafka;
-- Todos os eventos podem ser visualizados por lona aplicaçao;    
+- Todos os eventos podem ser visualizados por **logs** na aplicaçao;    
 - Start da aplicação localmente:
     1) Abra um terminal, dentro da raiz do projeto execute o comando `docker-compose up -d`
     2) em seguida execute o comando `./gradlew :api:build`

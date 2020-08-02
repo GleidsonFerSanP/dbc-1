@@ -79,12 +79,11 @@ Para o cliente **Sicred**.
   definindo o tempo que seja desejado no payload;
 - Para criar um voto é necessário enviar uma requisição do tipo **POST** para o endpoint `localhost:8080/votes` com o 
   seguinte formato:
-  `{
+     `{
        "scheduleCode": "5e297903-016f-44e7-bc86-0f476c51d86c",
        "option": "Sim", //Sim ou Nao
        "cpf": "99999999999",
-       "birthday": "11/06/1984"
-   
+       "birthday": "11/06/1984"  
    }`
 - É possível consultar os resultados da votação no endpoint do tipo **GET** `http://localhost:8080/schedules/<code>/results`
 - É possível submeter todas as requisições pelo - [Swagger](http://localhost:8080/swagger-ui.html "Swagger") 

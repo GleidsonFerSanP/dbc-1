@@ -89,5 +89,6 @@ Para o cliente **Sicred**.
 - É possivel submeter todas as requisições pelo - [Swagger](http://localhost:8080/swagger-ui.html "Swagger") 
 - Somente é possível realizar votos com CPFs válidos e existentes na receita federal devido a integração com o HubDev 
   utilizada para fins de avaliação, visto que o endpoint sugerido nas orientações da avaliação não está funcionando. Por 
-  este motivo é necessário informar a data de aniversário corretamente também ou o CPF não é localizado na receita.
+  este motivo, é necessário informar a data de aniversário corretamente também, ou o CPF não será localizado na receita federal
+  e impossibilitará a votação.
 - Qualquer dúvida estou a disposição no email: `gleidson.ferreirasantos@gmail.com`;

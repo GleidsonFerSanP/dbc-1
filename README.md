@@ -59,7 +59,7 @@ Para o cliente **Sicred**.
      - user: `sicred`.
      - password: `sicred`.
      - database: `sicred`.
-- Foi iniciado o deploy da app em um cluster K*S na [Digital Ocean](https://www.digitalocean.com/ "Digital Ocean"), 
+- Foi iniciado o deploy da app em um cluster **K8S(Kubernetes)** na [Digital Ocean](https://www.digitalocean.com/ "Digital Ocean"), 
   entretanto, não houve tempo hábil para a conclusão, podendo ser demonstrado o conhecimento em momento oportuno em que 
   seja solicitado.
 - [Swagger](http://localhost:8080/swagger-ui.html "Swagger") - Documentação dos endpoints do serviço estão disponíveis no endereço

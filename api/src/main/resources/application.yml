@@ -1,17 +1,17 @@
 
 spring:
   rabbitmq:
-    host: ${RABBIT_HOST}
+    host: localhost
     port: 5672
-    password: ${RABBIT_USER}
-    username: ${RABBIT_PASSWORD}
+    password: rabbitmq
+    username: rabbitmq
   application:
     name: sicred-api
   datasource:
     driver-class-name: org.postgresql.Driver
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
-    url: jdbc:postgresql://${DB_HOST}:25060/sicred
+    username: sicred
+    password: sicred
+    url: jdbc:postgresql://localhost:15432/sicred
     platform: postgres
   flyway:
     baseline-on-migrate: true
@@ -33,7 +33,7 @@ feign:
   client:
     devhub:
       cpf:
-        uri: https://ws.hubdodesenvolvedor.com.br/v2/cpf/?token=${HUB_DEV_TOKEN}
+        uri: https://ws.hubdodesenvolvedor.com.br/v2/cpf/?token=93561250HZYxvoczWF168922000
     config:
       default:
         connectTimeout: 15000

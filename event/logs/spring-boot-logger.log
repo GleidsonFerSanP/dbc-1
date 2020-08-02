@@ -1,0 +1,762 @@
+2020-08-02 16:57:59,685 INFO org.springframework.boot.SpringApplication [Test worker] No active profile set, falling back to default profiles: default
+2020-08-02 16:58:00,303 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 16:58:00,305 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-02 16:58:00,342 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Finished Spring Data repository scanning in 30ms. Found 0 JDBC repository interfaces.
+2020-08-02 16:58:00,373 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 16:58:00,375 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-02 16:58:00,387 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [Test worker] Finished Spring Data repository scanning in 4ms. Found 0 JPA repository interfaces.
+2020-08-02 16:58:00,640 INFO org.springframework.cloud.context.scope.GenericScope [Test worker] BeanFactory id=7867501e-236d-3897-9d70-e254a0460754
+2020-08-02 16:58:01,032 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Flyway Community Edition 6.4.4 by Redgate
+2020-08-02 16:58:01,038 INFO com.zaxxer.hikari.HikariDataSource [Test worker] HikariPool-1 - Starting...
+2020-08-02 16:58:01,223 INFO com.zaxxer.hikari.HikariDataSource [Test worker] HikariPool-1 - Start completed.
+2020-08-02 16:58:01,242 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Database: jdbc:h2:mem:545072e3-801e-4793-9607-3bccf541a8b3 (H2 1.4)
+2020-08-02 16:58:01,475 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Successfully validated 3 migrations (execution time 00:00.102s)
+2020-08-02 16:58:01,520 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-08-02 16:58:01,591 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Current version of schema "PUBLIC": << Empty Schema >>
+2020-08-02 16:58:01,597 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Migrating schema "PUBLIC" to version 290720201500 - create-table-schedule
+2020-08-02 16:58:01,634 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Migrating schema "PUBLIC" to version 300720200000 - create-table-vote
+2020-08-02 16:58:01,670 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Migrating schema "PUBLIC" to version 300720210000 - alter-table-vote-add-constraint-unique-cpf-schedule
+2020-08-02 16:58:01,703 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [Test worker] Successfully applied 3 migrations to schema "PUBLIC" (execution time 00:00.127s)
+2020-08-02 16:58:01,854 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Test worker] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 16:58:01,980 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 16:58:02,005 WARN org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration [Test worker] No spring.application.name found, defaulting to 'application'
+2020-08-02 16:58:02,010 WARN com.netflix.config.sources.URLConfigurationSource [Test worker] No URLs will be polled as dynamic configuration sources.
+2020-08-02 16:58:02,013 INFO com.netflix.config.sources.URLConfigurationSource [Test worker] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 16:58:02,023 WARN com.netflix.config.sources.URLConfigurationSource [Test worker] No URLs will be polled as dynamic configuration sources.
+2020-08-02 16:58:02,024 INFO com.netflix.config.sources.URLConfigurationSource [Test worker] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 16:58:02,101 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-02 16:58:02,732 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 16:58:03,050 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-02 16:58:03,647 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 16:58:03,658 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 16:58:04,136 INFO org.apache.kafka.common.config.AbstractConfig [Test worker] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-02 16:58:04,255 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka version: 2.5.0
+2020-08-02 16:58:04,256 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka commitId: 66563e712b0b9f84
+2020-08-02 16:58:04,256 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka startTimeMs: 1596398284253
+2020-08-02 16:58:04,834 INFO org.apache.kafka.common.config.AbstractConfig [Test worker] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = sicred-event
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2020-08-02 16:58:04,888 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka version: 2.5.0
+2020-08-02 16:58:04,888 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka commitId: 66563e712b0b9f84
+2020-08-02 16:58:04,889 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [Test worker] Kafka startTimeMs: 1596398284888
+2020-08-02 16:58:04,891 INFO org.apache.kafka.clients.consumer.KafkaConsumer [Test worker] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Subscribed to topic(s): schedule.result
+2020-08-02 16:58:04,894 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Test worker] Initializing ExecutorService
+2020-08-02 16:58:04,903 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [Test worker] Triggering deferred initialization of Spring Data repositories…
+2020-08-02 16:58:04,905 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [Test worker] Spring Data repositories initialized!
+2020-08-02 16:58:04,921 INFO org.springframework.boot.StartupInfoLogger [Test worker] Started EventApplicationTests in 7.227 seconds (JVM running for 8.717)
+2020-08-02 16:58:04,927 INFO org.apache.kafka.clients.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Cluster ID: k-mv8KjNSsCgNe807EWNQg
+2020-08-02 16:58:04,928 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$FindCoordinatorResponseHandler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2020-08-02 16:58:04,941 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 16:58:04,964 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-08-02 16:58:04,965 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 16:58:04,985 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Finished assignment for group at generation 5: {consumer-sicred-event-1-4f02757e-1af3-495a-b0d2-aa9f96957f47=Assignment(partitions=[schedule.result-0, schedule.result-1, schedule.result-2])}
+2020-08-02 16:58:05,000 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$2 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Successfully joined group with generation 5
+2020-08-02 16:58:05,014 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Adding newly assigned partitions: schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 16:58:05,026 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-2 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 16:58:05,027 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 16:58:05,027 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-1 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 16:58:05,032 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions assigned: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 16:58:05,209 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Revoke previously assigned partitions schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 16:58:05,210 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions revoked: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 16:58:05,210 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Member consumer-sicred-event-1-4f02757e-1af3-495a-b0d2-aa9f96957f47 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2020-08-02 16:58:05,211 INFO org.apache.kafka.clients.consumer.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Unsubscribed all topics or patterns and assigned partitions
+2020-08-02 16:58:05,212 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] Shutting down ExecutorService
+2020-08-02 16:58:05,219 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: Consumer stopped
+2020-08-02 16:58:05,232 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 16:58:05,234 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 16:58:05,236 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-02 16:58:05,240 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-02 17:00:54,834 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-02 17:00:55,252 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 17:00:55,253 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-02 17:00:55,266 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 9ms. Found 0 JDBC repository interfaces.
+2020-08-02 17:00:55,280 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 17:00:55,281 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-02 17:00:55,314 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 25ms. Found 0 JPA repository interfaces.
+2020-08-02 17:00:55,512 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=85fac801-be1f-34b7-8b4c-059b5f74b62d
+2020-08-02 17:00:55,707 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Flyway Community Edition 6.4.4 by Redgate
+2020-08-02 17:00:55,712 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-02 17:00:55,857 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-02 17:00:55,865 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Database: jdbc:h2:mem:cde9948e-191f-48aa-8641-0fcb74653b6c (H2 1.4)
+2020-08-02 17:00:55,915 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Successfully validated 3 migrations (execution time 00:00.016s)
+2020-08-02 17:00:55,926 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-08-02 17:00:55,974 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Current version of schema "PUBLIC": << Empty Schema >>
+2020-08-02 17:00:55,979 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 290720201500 - create-table-schedule
+2020-08-02 17:00:56,005 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 300720200000 - create-table-vote
+2020-08-02 17:00:56,026 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 300720210000 - alter-table-vote-add-constraint-unique-cpf-schedule
+2020-08-02 17:00:56,042 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Successfully applied 3 migrations to schema "PUBLIC" (execution time 00:00.083s)
+2020-08-02 17:00:56,134 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 17:00:56,208 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 17:00:56,209 WARN org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration [main] No spring.application.name found, defaulting to 'application'
+2020-08-02 17:00:56,212 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2020-08-02 17:00:56,213 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 17:00:56,219 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2020-08-02 17:00:56,219 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 17:00:56,249 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-02 17:00:56,449 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 17:00:56,536 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-02 17:00:56,742 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 17:00:56,757 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 17:00:57,132 INFO org.apache.kafka.common.config.AbstractConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-02 17:00:57,227 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka version: 2.5.0
+2020-08-02 17:00:57,227 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka commitId: 66563e712b0b9f84
+2020-08-02 17:00:57,227 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka startTimeMs: 1596398457226
+2020-08-02 17:00:57,507 INFO org.apache.kafka.common.config.AbstractConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = sicred-event
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2020-08-02 17:00:57,540 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka version: 2.5.0
+2020-08-02 17:00:57,540 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka commitId: 66563e712b0b9f84
+2020-08-02 17:00:57,540 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka startTimeMs: 1596398457540
+2020-08-02 17:00:57,542 INFO org.apache.kafka.clients.consumer.KafkaConsumer [main] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Subscribed to topic(s): schedule.result
+2020-08-02 17:00:57,543 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService
+2020-08-02 17:00:57,548 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-02 17:00:57,549 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-02 17:00:57,580 INFO org.springframework.boot.StartupInfoLogger [main] Started EventApplication in 3.624 seconds (JVM running for 4.004)
+2020-08-02 17:00:57,591 INFO org.apache.kafka.clients.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Cluster ID: k-mv8KjNSsCgNe807EWNQg
+2020-08-02 17:00:57,593 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$FindCoordinatorResponseHandler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2020-08-02 17:00:57,598 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:00:57,612 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-08-02 17:00:57,612 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:00:57,644 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Finished assignment for group at generation 7: {consumer-sicred-event-1-b848f5dd-5875-4428-96fd-ae13820b0da4=Assignment(partitions=[schedule.result-0, schedule.result-1, schedule.result-2])}
+2020-08-02 17:00:57,651 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$2 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Successfully joined group with generation 7
+2020-08-02 17:00:57,657 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Adding newly assigned partitions: schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 17:00:57,669 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-2 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:00:57,670 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:00:57,670 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-1 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:00:57,673 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions assigned: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 17:04:28,598 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Revoke previously assigned partitions schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 17:04:28,600 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions revoked: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 17:04:28,600 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Member consumer-sicred-event-1-b848f5dd-5875-4428-96fd-ae13820b0da4 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2020-08-02 17:04:28,602 INFO org.apache.kafka.clients.consumer.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Unsubscribed all topics or patterns and assigned partitions
+2020-08-02 17:04:28,605 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] Shutting down ExecutorService
+2020-08-02 17:04:28,613 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: Consumer stopped
+2020-08-02 17:04:28,658 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 17:04:28,666 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 17:04:28,667 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-02 17:04:28,698 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-02 17:08:37,663 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-02 17:08:38,544 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 17:08:38,546 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-02 17:08:38,561 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 11ms. Found 0 JDBC repository interfaces.
+2020-08-02 17:08:38,579 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 17:08:38,580 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-02 17:08:38,586 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 2ms. Found 0 JPA repository interfaces.
+2020-08-02 17:08:38,873 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=85fac801-be1f-34b7-8b4c-059b5f74b62d
+2020-08-02 17:08:39,178 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Flyway Community Edition 6.4.4 by Redgate
+2020-08-02 17:08:39,184 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-02 17:08:39,520 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-02 17:08:39,549 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Database: jdbc:h2:mem:49575b69-06ef-40aa-8ec4-cc42c4859abf (H2 1.4)
+2020-08-02 17:08:39,700 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Successfully validated 3 migrations (execution time 00:00.056s)
+2020-08-02 17:08:39,723 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-08-02 17:08:39,803 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Current version of schema "PUBLIC": << Empty Schema >>
+2020-08-02 17:08:39,808 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 290720201500 - create-table-schedule
+2020-08-02 17:08:39,853 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 300720200000 - create-table-vote
+2020-08-02 17:08:39,906 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 300720210000 - alter-table-vote-add-constraint-unique-cpf-schedule
+2020-08-02 17:08:39,935 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Successfully applied 3 migrations to schema "PUBLIC" (execution time 00:00.146s)
+2020-08-02 17:08:40,146 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 17:08:40,427 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 17:08:40,510 WARN org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration [main] No spring.application.name found, defaulting to 'application'
+2020-08-02 17:08:40,519 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2020-08-02 17:08:40,520 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 17:08:40,538 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2020-08-02 17:08:40,539 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 17:08:40,711 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-02 17:08:41,066 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 17:08:41,569 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-02 17:08:42,026 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 17:08:42,045 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 17:08:42,700 INFO org.apache.kafka.common.config.AbstractConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-02 17:08:42,826 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka version: 2.5.0
+2020-08-02 17:08:42,826 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka commitId: 66563e712b0b9f84
+2020-08-02 17:08:42,826 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka startTimeMs: 1596398922825
+2020-08-02 17:08:43,091 INFO org.apache.kafka.common.config.AbstractConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = sicred-event
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2020-08-02 17:08:43,192 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka version: 2.5.0
+2020-08-02 17:08:43,192 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka commitId: 66563e712b0b9f84
+2020-08-02 17:08:43,192 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka startTimeMs: 1596398923192
+2020-08-02 17:08:43,194 INFO org.apache.kafka.clients.consumer.KafkaConsumer [main] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Subscribed to topic(s): schedule.result
+2020-08-02 17:08:43,195 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService
+2020-08-02 17:08:43,211 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-02 17:08:43,215 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-02 17:08:43,260 INFO org.springframework.boot.StartupInfoLogger [main] Started EventApplication in 7.14 seconds (JVM running for 8.12)
+2020-08-02 17:08:43,281 INFO org.apache.kafka.clients.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Cluster ID: k-mv8KjNSsCgNe807EWNQg
+2020-08-02 17:08:43,348 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$FindCoordinatorResponseHandler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2020-08-02 17:08:43,369 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:08:43,432 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-08-02 17:08:43,434 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:08:43,458 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Finished assignment for group at generation 9: {consumer-sicred-event-1-30633179-133e-438c-9bb1-683a60594cfe=Assignment(partitions=[schedule.result-0, schedule.result-1, schedule.result-2])}
+2020-08-02 17:08:43,479 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$2 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Successfully joined group with generation 9
+2020-08-02 17:08:43,499 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Adding newly assigned partitions: schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 17:08:43,514 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-2 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:08:43,515 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:08:43,515 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-1 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:08:43,517 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions assigned: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 17:30:42,836 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-02 17:30:44,048 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 17:30:44,050 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-08-02 17:30:44,086 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 26ms. Found 0 JDBC repository interfaces.
+2020-08-02 17:30:44,118 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-02 17:30:44,119 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-02 17:30:44,132 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2020-08-02 17:30:44,590 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=85fac801-be1f-34b7-8b4c-059b5f74b62d
+2020-08-02 17:30:45,008 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Flyway Community Edition 6.4.4 by Redgate
+2020-08-02 17:30:45,018 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-02 17:30:45,273 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-02 17:30:45,333 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Database: jdbc:h2:mem:954c8002-791f-4863-8fb3-7ea31d2d9ca9 (H2 1.4)
+2020-08-02 17:30:45,776 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Successfully validated 3 migrations (execution time 00:00.023s)
+2020-08-02 17:30:45,787 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2020-08-02 17:30:45,868 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Current version of schema "PUBLIC": << Empty Schema >>
+2020-08-02 17:30:45,875 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 290720201500 - create-table-schedule
+2020-08-02 17:30:45,907 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 300720200000 - create-table-vote
+2020-08-02 17:30:45,929 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Migrating schema "PUBLIC" to version 300720210000 - alter-table-vote-add-constraint-unique-cpf-schedule
+2020-08-02 17:30:45,951 INFO org.flywaydb.core.internal.logging.slf4j.Slf4jLog [main] Successfully applied 3 migrations to schema "PUBLIC" (execution time 00:00.091s)
+2020-08-02 17:30:46,134 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-02 17:30:46,207 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-02 17:30:46,269 WARN org.springframework.cloud.netflix.archaius.ArchaiusAutoConfiguration [main] No spring.application.name found, defaulting to 'application'
+2020-08-02 17:30:46,279 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2020-08-02 17:30:46,279 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 17:30:46,299 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2020-08-02 17:30:46,299 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-08-02 17:30:46,416 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-02 17:30:46,832 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-02 17:30:46,989 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-02 17:30:47,439 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-02 17:30:47,456 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 17:30:47,711 INFO org.apache.kafka.common.config.AbstractConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-08-02 17:30:47,909 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka version: 2.5.0
+2020-08-02 17:30:47,910 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka commitId: 66563e712b0b9f84
+2020-08-02 17:30:47,910 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka startTimeMs: 1596400247907
+2020-08-02 17:30:48,594 INFO org.apache.kafka.common.config.AbstractConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = sicred-event
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2020-08-02 17:30:48,669 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka version: 2.5.0
+2020-08-02 17:30:48,669 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka commitId: 66563e712b0b9f84
+2020-08-02 17:30:48,669 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka startTimeMs: 1596400248669
+2020-08-02 17:30:48,671 INFO org.apache.kafka.clients.consumer.KafkaConsumer [main] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Subscribed to topic(s): schedule.result
+2020-08-02 17:30:48,673 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService
+2020-08-02 17:30:48,688 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-02 17:30:48,689 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-02 17:30:48,710 INFO org.springframework.boot.StartupInfoLogger [main] Started EventApplication in 9.436 seconds (JVM running for 12.571)
+2020-08-02 17:30:48,736 INFO org.apache.kafka.clients.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Cluster ID: k-mv8KjNSsCgNe807EWNQg
+2020-08-02 17:30:48,750 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$FindCoordinatorResponseHandler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2020-08-02 17:30:48,753 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:30:49,110 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2020-08-02 17:30:49,110 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:30:49,882 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$HeartbeatResponseHandler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Attempt to heartbeat failed since group is rebalancing
+2020-08-02 17:30:49,883 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Revoke previously assigned partitions schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 17:30:49,883 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions revoked: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 17:30:49,883 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:30:49,928 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Finished assignment for group at generation 10: {consumer-sicred-event-1-30633179-133e-438c-9bb1-683a60594cfe=Assignment(partitions=[schedule.result-0, schedule.result-1]), consumer-sicred-event-1-c445f201-f03e-4932-b475-1423b30a50eb=Assignment(partitions=[schedule.result-2])}
+2020-08-02 17:30:50,214 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$2 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Successfully joined group with generation 10
+2020-08-02 17:30:50,214 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Adding newly assigned partitions: schedule.result-0, schedule.result-1
+2020-08-02 17:30:50,216 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$2 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Successfully joined group with generation 10
+2020-08-02 17:30:50,219 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Adding newly assigned partitions: schedule.result-2
+2020-08-02 17:30:50,247 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:30:50,248 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-1 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:30:50,249 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions assigned: [schedule.result-0, schedule.result-1]
+2020-08-02 17:30:50,250 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-2 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:30:50,252 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions assigned: [schedule.result-2]
+2020-08-02 17:31:20,489 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Revoke previously assigned partitions schedule.result-0, schedule.result-1
+2020-08-02 17:31:20,492 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions revoked: [schedule.result-0, schedule.result-1]
+2020-08-02 17:31:20,492 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Member consumer-sicred-event-1-30633179-133e-438c-9bb1-683a60594cfe sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2020-08-02 17:31:20,495 INFO org.apache.kafka.clients.consumer.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Unsubscribed all topics or patterns and assigned partitions
+2020-08-02 17:31:20,496 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] Shutting down ExecutorService
+2020-08-02 17:31:20,645 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: Consumer stopped
+2020-08-02 17:31:20,655 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 17:31:20,658 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 17:31:20,659 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-02 17:31:20,667 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-02 17:31:23,226 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$HeartbeatResponseHandler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Attempt to heartbeat failed since group is rebalancing
+2020-08-02 17:31:23,227 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Revoke previously assigned partitions schedule.result-2
+2020-08-02 17:31:23,227 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions revoked: [schedule.result-2]
+2020-08-02 17:31:23,228 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] (Re-)joining group
+2020-08-02 17:31:23,243 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Finished assignment for group at generation 11: {consumer-sicred-event-1-c445f201-f03e-4932-b475-1423b30a50eb=Assignment(partitions=[schedule.result-0, schedule.result-1, schedule.result-2])}
+2020-08-02 17:31:23,246 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator$2 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Successfully joined group with generation 11
+2020-08-02 17:31:23,246 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Adding newly assigned partitions: schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 17:31:23,249 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-2 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:31:23,249 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:31:23,249 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Setting offset for partition schedule.result-1 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[127.0.0.1:9092 (id: 1 rack: null)], epoch=0}}
+2020-08-02 17:31:23,249 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions assigned: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 17:32:09,397 INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Revoke previously assigned partitions schedule.result-0, schedule.result-1, schedule.result-2
+2020-08-02 17:32:09,397 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: partitions revoked: [schedule.result-0, schedule.result-1, schedule.result-2]
+2020-08-02 17:32:09,397 INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Member consumer-sicred-event-1-c445f201-f03e-4932-b475-1423b30a50eb sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2020-08-02 17:32:09,398 INFO org.apache.kafka.clients.consumer.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-sicred-event-1, groupId=sicred-event] Unsubscribed all topics or patterns and assigned partitions
+2020-08-02 17:32:09,399 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] Shutting down ExecutorService
+2020-08-02 17:32:09,415 INFO org.springframework.core.log.LogAccessor [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] sicred-event: Consumer stopped
+2020-08-02 17:32:09,436 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-02 17:32:09,438 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-02 17:32:09,439 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-02 17:32:09,442 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

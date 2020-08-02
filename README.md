@@ -46,10 +46,10 @@ Para o cliente **Sicred**.
     3) em seguida execute o comando `./gradlew :messaging:build`
     4) em seguida execute o comando `./gradlew :event:build`
     2) em seguida execute o comando `./gradlew :api:bootRun`
-    3) em seguida, em uma nova aba do terminal, execute o comando `./gradlew :messaging:bootRun`
-    4) em seguida, em uma nova aba do terminal, execute o comando `./gradlew :event:bootRun`
+    3) em seguida, em uma nova aba do terminal, na raiz do projeto execute o comando `./gradlew :messaging:bootRun`
+    4) em seguida, em uma nova aba do terminal, na raiz do projeto execute o comando `./gradlew :event:bootRun`
 - Nesse formato de starter da aplicação e possível acompanhar os logs de cada modulo de forma separada.
-- Caso queiram executar a app apenas com um único comando execute no terminal apenas:
+- Caso queiram executar a app apenas com um único comando execute no terminal apenas, na raiz do projeto:
  `sudo chmod -x startup.sh && sh startup.sh` em seguida digite a senha de sudo. Esse método é menos recomendado,
  sendo necessário dar kill nos processos iniciados pelo script ao final do uso do mesmo quando quiser encerrar as apps; 
 - Caso queiram ver a base de dados criada seguem orientações de acesso:

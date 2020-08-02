@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgres
+spec:
+  type: ExternalName
+  externalName: db-postgresql-nyc1-17353-do-user-7647301-0.a.db.ondigitalocean.com
+  ports:
+    - port: 80
+      protocol: TCP

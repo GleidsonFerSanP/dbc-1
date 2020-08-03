@@ -6,6 +6,7 @@ Para o cliente **Sicred**.
 - Lombok
     1) Instalar o [Plugin do Lombok](https://projectlombok.org/).
     2) Habilitar processamento de anotações: Build, Execution, Deployment -> Compiler -> Annotation Processors (Enable Annotation Processing).
+    3) Java 11
 ### Dependências Docker
 - Docker
     1) Instalar o [Docker](https://docs.docker.com/get-docker/).
@@ -49,7 +50,7 @@ Para o cliente **Sicred**.
     2) em seguida execute o comando `./gradlew :api:bootRun`
     3) em seguida, em nova aba do terminal, na raiz do projeto execute o comando `./gradlew :messaging:bootRun`
     4) em seguida, em nova aba do terminal, na raiz do projeto execute o comando `./gradlew :event:bootRun`
-- Nesse formato de starter da aplicação e possível acompanhar os logs de cada modulo de forma separada.
+- Nesse formato de starter da aplicação e possível acompanhar os logs de cada modulo de forma separada, caso existam mais de 1 Java jdk ou jre instalados na máquina, pode ser necessário adicionar `-Dorg.gradle.java.home=<caminho do java 11 na maquina>` no comando para os builds ou bootRuns.
 - Caso queiram executar a app apenas com um único comando execute no terminal apenas, na raiz do projeto:
  `sudo chmod -x startup.sh && sh startup.sh` em seguida digite a senha de sudo. Esse método é menos recomendado,
  sendo necessário dar kill nos processos iniciados pelo script ao final do uso do mesmo quando quiser encerrar as apps; 

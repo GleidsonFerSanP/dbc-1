@@ -29,7 +29,7 @@ public class UUIDValidatorTest {
     }
 
     @Test
-    @DisplayName("testa se é um UUID inválido")
+    @DisplayName("testa se é um UUID vazio")
     public void makeUUIDValidatorFailToEmptyTextTest(){
         var uuidValidator = new UUIDValidator();
         boolean valid = uuidValidator.isValid("", null);
@@ -37,7 +37,7 @@ public class UUIDValidatorTest {
     }
 
     @Test
-    @DisplayName("testa se é um UUID inválido")
+    @DisplayName("testa se é um UUID null")
     public void makeUUIDValidatorFailToNullTextTest(){
         var uuidValidator = new UUIDValidator();
         boolean valid = uuidValidator.isValid(null, null);

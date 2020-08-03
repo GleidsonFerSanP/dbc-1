@@ -24,6 +24,7 @@ public class VoteRepositoryTest {
 
     @Test
     @Sql("/sql/schedule-insert.sql")
+    @DisplayName("testa a query com os resultados da votação")
     public void findVotesByScheduleCodeGroupByVoteOption(){
         final ScheduleResultDto scheduleResultDto = scheduleRepository
                 .findScheduleResults("8de44aec-d624-44d7-b14b-d342fc0bf1d9");

@@ -32,7 +32,6 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.BAD_REQUEST.value());
-
     }
 
     @Test
@@ -51,7 +50,6 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value());
-
     }
 
     @Test
@@ -71,7 +69,6 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.BAD_REQUEST.value());
-
     }
 
     @Test
@@ -92,7 +89,6 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.CREATED.value());
-
     }
 
     @Test
@@ -114,7 +110,6 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .body("content[0].code", notNullValue())
                 .body("content[0].title", notNullValue())
         ;
-
     }
 
     @Test
@@ -135,11 +130,10 @@ public class ScheduleTest extends IntegrationBaseTest {
                 .body("errors[0].httpStatus", equalTo(HttpStatus.BAD_REQUEST.value()))
                 .body("errors[0].error", equalTo("ConstraintViolationException"))
         ;
-
     }
 
     @Test
-    @DisplayName("busca uma pauta que não existe pelo code")
+    @DisplayName("busca uma pauta que não existe pelo code, retorna 404")
     public void findByCodeScheduleNotFound(){
 
         RestAssuredMockMvc.given()

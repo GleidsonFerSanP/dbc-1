@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class VoteOptionValidatorTest {
 
     @Test
-    @DisplayName("testa se é uma VoteOption Sim é válida")
+    @DisplayName("testa se uma VoteOption Sim é válida")
     public void makeVoteOptionSimSuccessTest(){
         var voteOptionValidator = new VoteOptionValidator();
         boolean valid = voteOptionValidator.isValid("Sim", null);
@@ -20,7 +20,7 @@ public class VoteOptionValidatorTest {
     }
 
     @Test
-    @DisplayName("testa se é uma VoteOption Nao é válida")
+    @DisplayName("testa se uma VoteOption Nao é válida")
     public void makeVoteOptionNaoSuccessTest(){
         var voteOptionValidator = new VoteOptionValidator();
         boolean valid = voteOptionValidator.isValid("Nao", null);
@@ -28,7 +28,7 @@ public class VoteOptionValidatorTest {
     }
 
     @Test
-    @DisplayName("testa se é uma VoteOption vazio é inválido")
+    @DisplayName("testa se uma VoteOption vazio é inválido")
     public void makeVoteOptionFailToEmptyTextTest(){
         var voteOptionValidator = new VoteOptionValidator();
         boolean valid = voteOptionValidator.isValid("", null);
@@ -36,7 +36,7 @@ public class VoteOptionValidatorTest {
     }
 
     @Test
-    @DisplayName("testa se é uma VoteOption null inválido")
+    @DisplayName("testa se uma VoteOption null inválido")
     public void makeVoteOptionFailToNullTextTest(){
         var voteOptionValidator = new VoteOptionValidator();
         boolean valid = voteOptionValidator.isValid(null, null);
@@ -44,7 +44,7 @@ public class VoteOptionValidatorTest {
     }
 
     @Test
-    @DisplayName("testa se é uma VoteOption para qualquer outro texto diferente de [Sim, Nao] é inválido")
+    @DisplayName("testa se uma VoteOption para qualquer outro texto, diferente de [Sim, Nao] é inválido")
     public void makeVoteOptionFailToOthersTextTest(){
         var voteOptionValidator = new VoteOptionValidator();
         boolean valid = voteOptionValidator.isValid(TestUtils.randomText(3), null);

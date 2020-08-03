@@ -30,7 +30,6 @@ public class VoteTest extends IntegrationBaseTest {
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.BAD_REQUEST.value());
-
     }
 
     @Test
@@ -49,7 +48,6 @@ public class VoteTest extends IntegrationBaseTest {
                 .log().body().and()
                 .assertThat()
                 .statusCode(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value());
-
     }
 
     @Test
@@ -167,7 +165,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto sem a opção votada")
+    @DisplayName("falha ao criar um voto sem a opção votada")
     public void createVotesValidateOptionFail() {
 
         var request = VoteRequest.builder()
@@ -195,7 +193,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto com um cpf maior q 11 caracteres")
+    @DisplayName("falha ao criar um voto com um cpf maior que 11 caracteres")
     public void createVotesValidateCpfSizeGreaterElevenCharsFail() {
 
         var request = VoteRequest.builder()
@@ -224,7 +222,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto com um cpf menor que 11 caracteres")
+    @DisplayName("falha ao criar um voto com um cpf menor que 11 caracteres")
     public void createVotesValidateCpfSizeSmallerElevenCharsFail() {
 
         var request = VoteRequest.builder()
@@ -254,7 +252,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto sem um CPF")
+    @DisplayName("falha ao criar um voto sem um CPF")
     public void createVotesValidateWithoutCpfFail() {
 
         var request = VoteRequest.builder()
@@ -282,7 +280,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto sem uma data de nascimento")
+    @DisplayName("falha ao criar um voto sem uma data de nascimento")
     public void createVotesValidateWithoutBirthdayFail() {
 
         var request = VoteRequest.builder()
@@ -311,7 +309,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto com uma data de nascimento no formato diferente do exigido")
+    @DisplayName("falha ao criar um voto com uma data de nascimento no formato diferente do exigido")
     public void createVotesValidateWithBirthdayInvalidPatternFormatFail() {
 
         var request = VoteRequest.builder()
@@ -340,7 +338,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("falha ao criar uma voto sem um CPF válido")
+    @DisplayName("falha ao criar um voto sem um CPF válido")
     public void createVotesValidateCpfFail() {
 
         var request = VoteRequest.builder()
@@ -516,7 +514,7 @@ public class VoteTest extends IntegrationBaseTest {
     }
 
     @Test
-    @DisplayName("busca todas os votos de uma pauta com sucesso")
+    @DisplayName("busca todos os votos de uma pauta com sucesso")
     @Sql("/sql/votes-insert-to-a-schedule.sql")
     public void getAllVotesFromAScheduleSuccess(){
 
@@ -536,7 +534,5 @@ public class VoteTest extends IntegrationBaseTest {
                 .body("content[0].optionSelected", notNullValue())
                 .body("content[0].voteDate", notNullValue())
         ;
-
     }
-
 }

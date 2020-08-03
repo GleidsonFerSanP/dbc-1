@@ -55,7 +55,7 @@ public class VoteRequestBirthdayTest {
     }
 
     @Test
-    @DisplayName("testa um string válida para um data, porém diferente do pattern definido e falha")
+    @DisplayName("testa uma string válida para um data, porém diferente do pattern definido e falha")
     public void validateAValidPatternToDateButDifferentPatternDefinedAndFail(){
 
         final var voteRequest = VoteRequest.builder()
@@ -106,7 +106,7 @@ public class VoteRequestBirthdayTest {
     }
 
     @Test
-    @DisplayName("testa um string válida para um data, com o pattern definido com sucesso")
+    @DisplayName("testa uma string válida para um data, com o pattern definido com sucesso")
     public void validateAValidPatternToDateWithSuccess(){
 
         final var voteRequest = VoteRequest.builder()

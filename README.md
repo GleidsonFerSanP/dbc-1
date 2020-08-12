@@ -1,5 +1,4 @@
 ## Projeto avaliação para vaga de desenvolvedor na DBC Company
-Para o cliente **Sicred**.
 
 ---
 ### Dependências para uso na IntelliJIDEA
@@ -17,9 +16,9 @@ Para o cliente **Sicred**.
     1) No browser acessar o [PGAdmin](http://localhost:16543).
     2) Configurar um novo server utilizando os dados de acesso
      - host: `local-postgres`.
-     - user: `sicred`.
-     - password: `sicred`.
-     - database: `sicred`.
+     - user: `******`.
+     - password: `*****`.
+     - database: `******`.
 ---
 ### Integrações
 - [HUBDEV](https://www.hubdodesenvolvedor.com.br/ "HUBDEV") - Consulta de CPF
@@ -57,9 +56,9 @@ Para o cliente **Sicred**.
 - Caso queiram ver a base de dados criada seguem orientações de acesso:
     1) Configurar um novo server utilizando os dados de acesso:
      - host: `local-postgres`.
-     - user: `sicred`.
-     - password: `sicred`.
-     - database: `sicred`.
+     - user: `*******`.
+     - password: `******`.
+     - database: `******`.
 - Foi iniciado o deploy da app em um cluster **K8S(Kubernetes)** na [Digital Ocean](https://www.digitalocean.com/ "Digital Ocean"), 
   entretanto, não houve tempo hábil para a conclusão, podendo ser demonstrado o conhecimento em momento oportuno em que 
   seja solicitado.
